@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="public/images/logo.svg" type="image/png">
+    <title>Ekyamm</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300&family=Quicksand:wght@500&family=Roboto+Serif:opsz,wght@8..144,600&display=swap');
+
+        body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(to bottom, rgba(176, 164, 245, 0.9) , rgba(237, 161, 151, 0.9));
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #ffffff; /* White background */
+    padding: 10px 6% 10px 6%;
+    /* padding-left: 6%; */
+    /* padding-right: 6%; */
+    position: fixed;
+    width: 100%;
+    height: 15%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    align-items: center;
+}
+
+/* Logo styles */
+.logo {
+    /* height: 45px; */
+    max-width: 200px;
+}
+
+.brand-btn{
+    background-color: #776EA5; 
+    color: #ffffff; 
+    border: none;
+    padding: 10px;
+    border-radius: 11px;
+    cursor: pointer;
+    font-family: 'Quicksand';
+}
+
+/* Contact button styles */
+.contact-button {
+    padding: 8px 16px;
+    font-size: 14px;
+    position: relative;
+    /* right: 10%; */
+}
+
+/* Media query for screens with a maximum width of 767px (typical mobile devices) */
+@media (max-width: 767px) {
+    .navbar{
+        max-height: 65px;
+    }
+    .logo {
+        max-width: 112px;
+    }
+    .contact-button{
+        font-size: 9px;
+    }
+}
+
+        /* Hero section styles */
+        .hero-section, .knowMore-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 90px;
+            /* Transparent background */
+            background-color: rgba(255, 255, 255, 0.048); 
+            margin-top: 75px;
+        }
+
+        .knowMore-section{
+            margin-top: 0;
+            background-color: rgba(217, 217, 217, 1);
+        }
+        #know-more{
+            font-family: 'Quicksand';
+            font-weight: 700;
+            font-size: 42px;
+        }
+
+        /* Text column styles */
+        .hero-text-column {
+            width: 50vw;
+            max-width: 600px;
+            margin: 25px;
+        }
+        .knowMore-section .hero-text-column {
+            margin-left: 85px;
+        }
+        .hero-text-column h1{
+            font-size: 60px;
+            font-family: 'Roboto Serif';
+            color: rgba(0, 0, 0, 1);
+        }
+        .knowMore-section .hero-text-column h1{
+            font-weight: 700;
+        }
+        .knowMore-section .hero-text-column img{
+            width: 300px;
+        }
+        .hero-text-column p{
+            font-family: 'Roboto Flex';
+            font-size: 30px;
+            line-height: 35px;
+        }
+        .brand-text{
+            color: rgba(59, 50, 107, 1);
+        }
+        .brand-text-bold{
+            font-weight: 600;
+        }
+
+        /* Image column styles */
+        .image-column {
+            flex-shrink: 0; /* Prevent image from shrinking */
+            margin-left: 20px;
+            width: 40vw;
+        }
+        .image-column img{
+            /* width: 550px; */
+            width: 100%;
+        }
+        .schedule-btn{
+            padding: 4px 10px;
+            font-size: 24px;
+        }
+
+        /* Responsive styles for tablets */
+        @media (min-width: 768px) and (max-width: 991px) {
+            .hero-text-column h1{
+                font-size: 42px;
+            }
+            .hero-text-column p{
+                font-size: 21px;
+            }
+            .schedule-btn{
+                font-size: 19px;
+                border-radius: 16px;
+            }
+
+            #know-more{
+                font-size: 13px;
+            }
+            .knowMore-section .hero-text-column img{
+                width: 100px;
+            }
+        }
+
+        /* Responsive styles for smaller screens */
+        @media (max-width: 767px) {
+            .hero-section, .knowMore-section {
+                flex-direction: column; /* Stack columns on small screens */
+                text-align: center; /* Center-align text on small screens */
+                padding: 0;
+            }
+
+            .image-column {
+                margin-left: 0; /* Remove margin for image on small screens */
+                margin-top: 20px; /* Add space between text and image on small screens */
+            }
+
+            .knowMore-section .hero-text-column{
+                margin: 20px 90px;
+            }
+
+            .hero-text-column {
+                width: 80vw;
+            }
+            .hero-text-column h1{
+                font-size: 28px;
+                line-height: 30px;
+            }
+            .hero-text-column p{
+                font-size: 14px;
+                line-height: 16px;
+            }
+            .schedule-btn{
+                font-size: 15px;
+                border-radius: 16px;
+            }
+            .image-column{
+                width: max-content;
+            }
+            .image-column img{
+                width: 80vw;
+                padding-bottom: 37px;
+            }
+            #know-more{
+                font-size: 13px;
+            }
+            .knowMore-section .hero-text-column img{
+                width: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <!-- Company Logo (left align) -->
+        <img src="public/images/ekyamm.png" alt="Company Logo" class="logo">
+
+        <!-- Contact Us button (right align) -->
+        <button class="brand-btn contact-button">Chat Now</button>
+    </div>
+    
+    <!-- Hero section -->
+    <section class="hero-section">
+        <!-- Text column -->
+        <div class="hero-text-column">
+            <h1>
+                <span class="brand-text">Enhance</span>
+                 the value of your clinic
+            </h1>
+            <p>
+                <span class="brand-text brand-text-bold">Ekyamm</span>
+                runs on Military-grade security with AES-256 encryption for 
+                <span class="brand-text brand-text-bold">
+                    controlled and confidential data management
+                </span>
+            </p>
+            <button class="brand-btn schedule-btn">
+                Schedule Demo
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="26" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Image column -->
+        <div class="image-column">
+            <img src="public/images/hero-mobile-3-screens.png" alt="Your Image">
+        </div>
+    </section>
+
+    <!-- 2nd section -->
+    <section class="knowMore-section">
+        <!-- Image column -->
+        <div class="image-column">
+            <img src="public/images/Section-2-women.png" alt="Your Image">
+        </div>
+
+        <!-- Text column -->
+        <div class="hero-text-column">
+            <h1>
+                Focus on
+                <span class="brand-text">helping patients</span>
+            </h1>
+            <p>Empower your patients experience with Your Clinic Companion</p>
+            <div id="know-more">Know More</div>
+            <div>
+                <img src="public/images/App store + Play store 2.png" alt="App & Play Store">
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Bootstrap JS and Popper.js for Navbar toggle functionality -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
