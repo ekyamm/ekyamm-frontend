@@ -77,7 +77,7 @@
     }
     #store-img-section{
         position: relative;
-        bottom: 8px;
+        bottom: 4px;
     }
 }
 
@@ -86,7 +86,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 30px 90px;
+            /* padding: 30px 90px; */
             padding: 50px 90px;
             /* Transparent background */
             background-color: rgba(255, 255, 255, 0.048); 
@@ -95,7 +95,8 @@
 
         .knowMore-section{
             margin-top: 0;
-            /* padding-top: 0; */
+            /* TODO: Changed today */
+            padding-top: 25px;
             background-color: rgba(217, 217, 217, 1);
         }
         .secure-section, .prescription-section{
@@ -167,21 +168,86 @@
         #PSYSharkTankWinner{
             display: flex;
             align-items: center;
+            margin-top: 30px;
+            margin-top: 0px;
+            padding-top: 0 !important;
+            padding-right: 40vw;
         }
         #PSYSharkTankWinner .image-column{
-            width: 50vw;
+            /* width: 50vw; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-left: auto;
             /* background-color: tomato; */
+            /* width: 50%; */
+        }
+        #PSYSharkTankWinner #schedule-demo2{
+            width: inherit;
+            color: #BE4D68;
+            /* Transparent background */
+            background-color: rgba(255, 255, 255, 0.048) !important;  
+            border: 2px solid #BE4D68;
+            padding: 10px;
+            border-radius: 14px;
+            cursor: pointer;
+            font-family: 'Quicksand';
+            font-weight: 500;
+        }
+        #PSYSharkTankWinner #schedule-demo2 img{
+            width: inherit;
+
+        }
+        #winnerMobile{
+            /* background-color: yellow; */
+            /* padding: 0 60px; */
+            width: auto;
+            width: min-content;
+        }
+        .section1-leftcol{
+            width: 50%;
+        }
+        #winnerMobile img{
+            /* width: 45% !important; */
+            width: 788px;
+            position: relative;
+            /* left: -15px;
+            bottom: -52px; */
+            left: 108px;
+            bottom: -48px;
         }
         #PSYSharkTankWinner .image-column img{
-            width: 68%;
+            /* width: 78%; */
         }
         #PSYSharkTankWinner #winnerImg{
             display: flex;
-            /* align-items: flex-end; */
+            flex-direction: column;
+            align-items: center;
             justify-content: end;
+            width: fit-content;
+            padding-top: 70px;
+        }
+        #PSYSharkTankWinner #winnerImg p{
+            font-family: 'Roboto Flex';
+            font-size: 30px;
+            font-weight: 500;
+            line-height: 35px;
+            letter-spacing: 0em;
+            text-align: center;
+
+            /* font-family: 'Quicksand';
+            font-size: 25px; */
+            margin: 30px;
+            width: 40vw;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        #PSYSharkTankWinner #winnerImg #winnerLogo{
+            width: 90%;
         }
         #PSYSharkTankWinner .image-column:nth-child(2) img{
-            width: 35%;
+            width: 40%;
         }
         /* #PSYSharkTankWinner .image-column:nth-child(1){
             width: 48%;
@@ -197,17 +263,36 @@
         } */
         .hero-section .image-column, .hero-text-column{
             z-index: 5;
+            margin-left: 5px;
         }
         #PSYSharkTankWinner svg, .hero-section svg, .hero-section svg:nth-child(1){
             position: absolute;
-            /* bottom: -130px; */
-            bottom: -1px;
             left: 0;
             z-index: 3;
+            /* bottom: -130px; */
+            /* bottom: -1px; */
+
+            /* Now Fixed */
+            bottom: -90px; 
+            /* New */
+            /* bottom: -120px; */
+        }
+        #introSection1{
+            margin-top: 133px;
+        }
+        .carousel-item.active #introSection1 {
+            /* padding-bottom: 70px; */
+            background-clip: padding-box;
         }
         /* #PSYSharkTankWinner .svgs svg:nth-child(1){
             display: block;
         } */
+        #PSYSharkTankWinner .svgs img, #introSection1 .svgs img{
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            /* bottom: 99px; */
+        }
         #PSYSharkTankWinner .svgs svg:nth-child(2), .hero-section .svgs svg:nth-child(2){
             display: none;
             /* z-index: -1;
@@ -217,6 +302,11 @@
             display: none;
             /* z-index: -1; */
         }
+        /* .section1-leftcol{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        } */
         /* .knowMore-section{
             z-index: 4;
         } */
@@ -251,7 +341,7 @@
         .secure-section{
             background-color: rgba(255, 255, 255, 0.048);
             padding: 50px;
-            /* padding-top: 70px; */
+            padding-top: 35px;
             /* align-items: center;
             justify-content: center; */
         }
@@ -287,6 +377,9 @@
         footer #store img{
             height: 37px !important;
         }
+        a{
+            text-decoration: none !important;
+        }
         footer #copyright{
             font-family: 'Roboto Flex';
             color: rgba(109, 106, 93, 1);
@@ -301,6 +394,13 @@
         }
         #contactUs{
             display: block;
+        }
+
+        .carousel-inner{
+            /* padding-bottom: 25px; */
+            /* TODO: Changed today */
+            /* margin-bottom: 30px; */
+            /* padding-bottom: 57px; */
         }
 
         /* Responsive styles for tablets */
@@ -395,6 +495,10 @@
 
             .hero-text-column {
                 width: 80vw;
+                margin: 25px;
+            }
+            #introSection1 .image-column{
+                margin-left: 0 !important;
             }
             .hero-text-column h1{
                 font-size: 28px;
@@ -426,19 +530,68 @@
                 /* height: 100vh; */
             }
 
+            #PSYSharkTankWinner{
+                display: flex;
+                flex-direction: column-reverse;
+                align-items: center;
+                margin-top: 30px;
+                margin-top: 0px;
+                padding-top: 0 !important;
+                /* padding-right: 40vw; */
+            }
+            #PSYSharkTankWinner #schedule-demo2{ /* Button */
+                font-size: 15px;
+                border-radius: 16px;
+                padding: 4px 10px;
+                margin-left: auto;
+                margin-right: auto;
+                width: fit-content;
+            }
+            #PSYSharkTankWinner #schedule-demo2 img{
+                width: min-content !important;
+                margin-left: 4px;
+                height: 10px;
+            }
+            .section1-leftcol{
+                width: 100vw;
+            }
             #PSYSharkTankWinner #winnerImg {
                 width: 100%;
                 /* height: 26vh; */
-                margin-left: auto;
+                /* margin-left: auto; */
                 margin-top: 20px;
-                display: flex;
+                /* display: flex;
                 align-items: center;
-                justify-content: center;
+                justify-content: center; */
             }
             #PSYSharkTankWinner #winnerImg img{
                 width: 60%;
                 padding-bottom: 0;
                 /* background-color: tomato; */
+            } 
+            #PSYSharkTankWinner #winnerImg #winnerLogo{
+                /* width: 83%; */
+                width: 75%;
+            }
+            #winnerMobile{
+                margin-top: 0px !important;
+                height: 370px;
+            }
+            #winnerMobile img{
+                width: 100vw;
+                position: relative;
+                left: -3px;
+                bottom: -35px;
+            }
+            #PSYSharkTankWinner #winnerImg p{
+                font-family: 'Roboto Flex';
+                font-size: 12px;
+                font-weight: 500;
+                line-height: 14px;
+                letter-spacing: 0em;
+                text-align: center;
+                width: 100%;
+                margin: 15px;
             }
             #PSYSharkTankWinner .image-column:nth-child(2){
                 width: 100%;
@@ -481,15 +634,15 @@
                 bottom: -26px;
                 left: 0;
             }
-            .hero-section .svgs span{
-                /* height: 15%; */
+            #introSection1 {
+                margin-top: 84px;
             }
 
             #know-more{
-                font-size: 13px;
+                font-size: 24px;
             }
             .knowMore-section .hero-text-column img{
-                width: 36px;
+                width: 71px;
             }
 
             .secure-section{
@@ -528,6 +681,10 @@
             .prescription-section{
                 flex-direction: column-reverse;
             }
+            .prescription-section #request-btn {
+                margin-top: 13px;
+                margin-bottom: 15px;
+            }
             .prescription-section .image-column{
                 margin-top: 0;
             }
@@ -542,6 +699,10 @@
             }
             .prescription-section .hero-text-column{
                 margin-bottom: 5px;
+                margin-bottom: -13px;
+            }
+            #section5 .hero-text-column{
+                margin-top: 1px;
             }
             .prescription-section .hero-text-column p, .prescription-section .hero-text-column h1{
                 margin-bottom: 0 !important;
@@ -618,6 +779,8 @@
             cursor: pointer;
         }
         .form-container h1{
+            font-size: 40px;
+            font-family: 'Roboto Serif';
             color: #776EA5;
             font-weight: 600;
         }
@@ -682,7 +845,9 @@
         /* Responsive styles for tablets */
         @media (min-width: 991px) {
             .hero-section {
-                height: calc(100vh + 35px);
+                /* height: calc(100vh + 35px); */
+                /* margin-top: 100px; */
+                margin-top: 50px;
             }
         }
     </style>
@@ -703,7 +868,7 @@
 
     <!-- class="carousel-fade" -->
     <!-- data-interval="5000" -->
-    <div id="carouselEkyammIndicators" class="carousel slide carousel-fade" style="z-index: 6;" data-ride="carousel" data-interval="5000">
+    <div id="carouselEkyammIndicators" class="carousel slide" style="z-index: 6;" data-ride="carousel" data-interval="500000">
         <ol class="carousel-indicators" style="z-index: 11;">
           <li data-target="#carouselEkyammIndicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselEkyammIndicators" data-slide-to="1"></li>
@@ -711,22 +876,28 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
               <section id="PSYSharkTankWinner" class="hero-section d-flex justify-content-center">
-                  <div id="winnerImg" class="image-column">
-                      <img src="public/images/WinnerText-Section1.png" alt="PSY Shark Tank Winner">
-                  </div>
-                  <div class="image-column">
-                      <img src="public/images/MobilePhones-Winner-Section1.png" alt="MobilePhone">
-                  </div>
-                  <div class="svgs">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#D9D9D9" fill-opacity="1" d="M0,160L48,165.3C96,171,192,181,288,202.7C384,224,480,256,576,250.7C672,245,768,203,864,176C960,149,1056,139,1152,112C1248,85,1344,43,1392,21.3L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
-
+                <div id="winnerMobile" class="image-column">
+                    <img src="public/images/handUI.png" alt="Phone in Hand">
+                </div>
+                <div class="section1-leftcol">
+                    <div id="winnerImg" class="image-column">
+                        <img id="winnerLogo" src="public/images/WinnerLogo-Section1.png" alt="PSY Shark Tank Winner">
+                        <p>24th Annual National Conference, Nov 2023 <br> <span>Indian Association of Private Psychiatry</span></p>
+                        <button id="schedule-demo2" class="schedule-btn">
+                            Schedule Demo
+                            <img src="public/images/redArrow.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+                <!-- <div class="svgs">
+                    <img src="public/images/Wave.svg" alt="">
                     <svg id="wave" style="transform:rotate(0deg); transition: 0.3s;" viewBox="0 0 1440 490" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(217, 217, 217, 1)" offset="0%"></stop><stop stop-color="rgba(217, 217, 217, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,343L120,359.3C240,376,480,408,720,351.2C960,294,1200,147,1440,81.7C1680,16,1920,33,2160,32.7C2400,33,2640,16,2880,8.2C3120,0,3360,0,3600,32.7C3840,65,4080,131,4320,130.7C4560,131,4800,65,5040,49C5280,33,5520,65,5760,106.2C6000,147,6240,196,6480,204.2C6720,212,6960,180,7200,179.7C7440,180,7680,212,7920,236.8C8160,261,8400,278,8640,310.3C8880,343,9120,392,9360,408.3C9600,425,9840,408,10080,375.7C10320,343,10560,294,10800,269.5C11040,245,11280,245,11520,261.3C11760,278,12000,310,12240,310.3C12480,310,12720,278,12960,236.8C13200,196,13440,147,13680,155.2C13920,163,14160,229,14400,269.5C14640,310,14880,327,15120,334.8C15360,343,15600,343,15840,326.7C16080,310,16320,278,16560,261.3C16800,245,17040,245,17160,245L17280,245L17280,490L17160,490C17040,490,16800,490,16560,490C16320,490,16080,490,15840,490C15600,490,15360,490,15120,490C14880,490,14640,490,14400,490C14160,490,13920,490,13680,490C13440,490,13200,490,12960,490C12720,490,12480,490,12240,490C12000,490,11760,490,11520,490C11280,490,11040,490,10800,490C10560,490,10320,490,10080,490C9840,490,9600,490,9360,490C9120,490,8880,490,8640,490C8400,490,8160,490,7920,490C7680,490,7440,490,7200,490C6960,490,6720,490,6480,490C6240,490,6000,490,5760,490C5520,490,5280,490,5040,490C4800,490,4560,490,4320,490C4080,490,3840,490,3600,490C3360,490,3120,490,2880,490C2640,490,2400,490,2160,490C1920,490,1680,490,1440,490C1200,490,960,490,720,490C480,490,240,490,120,490L0,490Z"></path></svg>
                     <span></span>
-                </div>
+                </div> -->
               </section>
             </div>
             <div class="carousel-item">
-                <section id="introSection1" class="hero-section">
+                <section id="introSection1" class="hero-section"> 
                     <div class="hero-text-column">
                         <h1>
                             <span class="brand-text">Enhance</span>&nbsp;the value of your clinic
@@ -741,17 +912,15 @@
                     </div>
 
                     <div class="image-column">
-                        <img src="public/images/hero-mobile-3-screens.png" alt="Your Image">
+                        <img src="public/images/heroMobile-3-screens.png" alt="Your Image">
                     </div>
-                    <div class="svgs">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#D9D9D9" fill-opacity="1" d="M0,160L48,165.3C96,171,192,181,288,202.7C384,224,480,256,576,250.7C672,245,768,203,864,176C960,149,1056,139,1152,112C1248,85,1344,43,1392,21.3L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
-
+                    <!-- <div class="svgs">
+                        <img src="public/images/Wave.svg" alt="">
                         <svg id="wave2" style="transform:rotate(0deg); transition: 0.3s;" viewBox="0 0 1440 490" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(217, 217, 217, 1)" offset="0%"></stop><stop stop-color="rgba(217, 217, 217, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,343L120,359.3C240,376,480,408,720,351.2C960,294,1200,147,1440,81.7C1680,16,1920,33,2160,32.7C2400,33,2640,16,2880,8.2C3120,0,3360,0,3600,32.7C3840,65,4080,131,4320,130.7C4560,131,4800,65,5040,49C5280,33,5520,65,5760,106.2C6000,147,6240,196,6480,204.2C6720,212,6960,180,7200,179.7C7440,180,7680,212,7920,236.8C8160,261,8400,278,8640,310.3C8880,343,9120,392,9360,408.3C9600,425,9840,408,10080,375.7C10320,343,10560,294,10800,269.5C11040,245,11280,245,11520,261.3C11760,278,12000,310,12240,310.3C12480,310,12720,278,12960,236.8C13200,196,13440,147,13680,155.2C13920,163,14160,229,14400,269.5C14640,310,14880,327,15120,334.8C15360,343,15600,343,15840,326.7C16080,310,16320,278,16560,261.3C16800,245,17040,245,17160,245L17280,245L17280,490L17160,490C17040,490,16800,490,16560,490C16320,490,16080,490,15840,490C15600,490,15360,490,15120,490C14880,490,14640,490,14400,490C14160,490,13920,490,13680,490C13440,490,13200,490,12960,490C12720,490,12480,490,12240,490C12000,490,11760,490,11520,490C11280,490,11040,490,10800,490C10560,490,10320,490,10080,490C9840,490,9600,490,9360,490C9120,490,8880,490,8640,490C8400,490,8160,490,7920,490C7680,490,7440,490,7200,490C6960,490,6720,490,6480,490C6240,490,6000,490,5760,490C5520,490,5280,490,5040,490C4800,490,4560,490,4320,490C4080,490,3840,490,3600,490C3360,490,3120,490,2880,490C2640,490,2400,490,2160,490C1920,490,1680,490,1440,490C1200,490,960,490,720,490C480,490,240,490,120,490L0,490Z"></path></svg>
                         <span></span>
-                    </div>
+                    </div> -->
                 </section>
             </div>
-
         </div>
         <!-- <a class="carousel-control-prev" href="#carouselEkyammIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
