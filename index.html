@@ -279,6 +279,8 @@
         }
         #introSection1{
             margin-top: 133px;
+            padding-top: 30px;
+            padding-bottom: 70px;
         }
         .carousel-item.active #introSection1 {
             /* padding-bottom: 70px; */
@@ -523,11 +525,20 @@
             }
             .image-column img{
                 width: 80vw;
-                padding-bottom: 37px;
+                padding-bottom: 40px;
+            }
+            #introSection1 .image-column img{
+                padding-bottom: 16% !important;
+                /* padding-bottom: 27px; */
+            }
+            #PSYSharkTankWinner #winnerMobile img{
+                padding-bottom: 10.5% !important;
+                /* padding-bottom: 27px; */
             }
 
-            #carouselEkyammIndicators {
-                /* height: 100vh; */
+            .carousel-item {
+                height: 630px;
+                max-height: fit-content;
             }
 
             #PSYSharkTankWinner{
@@ -571,17 +582,19 @@
             } 
             #PSYSharkTankWinner #winnerImg #winnerLogo{
                 /* width: 83%; */
-                width: 75%;
+                width: 43%;
             }
             #winnerMobile{
                 margin-top: 0px !important;
-                height: 370px;
+                /* height: 323.5px; */
+                height: auto;
             }
             #winnerMobile img{
-                width: 100vw;
+                width: 90vw;
                 position: relative;
-                left: -3px;
-                bottom: -35px;
+                left: -23px;
+                bottom: -38px;
+                bottom: -5vh;
             }
             #PSYSharkTankWinner #winnerImg p{
                 font-family: 'Roboto Flex';
@@ -635,7 +648,9 @@
                 left: 0;
             }
             #introSection1 {
-                margin-top: 84px;
+                /* margin-top: 85px; */
+                margin-top: 65px;
+                padding-top: 20px;
             }
 
             #know-more{
@@ -868,16 +883,16 @@
 
     <!-- class="carousel-fade" -->
     <!-- data-interval="5000" -->
-    <div id="carouselEkyammIndicators" class="carousel slide" style="z-index: 6;" data-ride="carousel" data-interval="500000">
+    <div id="carouselEkyammIndicators" class="carousel slide" style="z-index: 6;" data-ride="carousel" data-interval="4000">
         <ol class="carousel-indicators" style="z-index: 11;">
           <li data-target="#carouselEkyammIndicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselEkyammIndicators" data-slide-to="1"></li>
         </ol>
         <div class="carousel-inner">
-            <div class="carousel-item active">
+            <div id="carousel1" class="carousel-item active">
               <section id="PSYSharkTankWinner" class="hero-section d-flex justify-content-center">
                 <div id="winnerMobile" class="image-column">
-                    <img src="public/images/handUI.png" alt="Phone in Hand">
+                    <img id="winnerMobileImg" src="public/images/handUI.png" alt="Phone in Hand">
                 </div>
                 <div class="section1-leftcol">
                     <div id="winnerImg" class="image-column">
@@ -896,7 +911,7 @@
                 </div> -->
               </section>
             </div>
-            <div class="carousel-item">
+            <div id="carousel2" class="carousel-item">
                 <section id="introSection1" class="hero-section"> 
                     <div class="hero-text-column">
                         <h1>
@@ -1179,9 +1194,21 @@
             closeForm()
         })
 
-        document.getElementById('carouselEkyammIndicators').carousel({
-            interval: 1000
-        })
+        window.addEventListener('resize', function() {
+            var winnerMobileImage = document.getElementById('winnerMobileImg');
+            if (window.innerWidth <= 768) {
+                winnerMobileImage.src = 'public/images/handUI.png';
+            } else {
+                winnerMobileImage.src = 'public/images/hand+UI.png';
+            }
+        });
+        var winnerMobileImage = document.getElementById('winnerMobileImg');
+        if (window.innerWidth <= 768) {
+            winnerMobileImage.src = 'public/images/handUI.png';
+        } else {
+            winnerMobileImage.src = 'public/images/hand+UI.png';
+        }
+
     </script>
 
     <!-- Bootstrap JS and Popper.js for Navbar toggle functionality -->
