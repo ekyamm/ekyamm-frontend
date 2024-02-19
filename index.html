@@ -61,7 +61,7 @@
 }
 
 /* Media query for screens with a maximum width of 767px (typical mobile devices) */
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
     .navbar{
         max-height: 65px;
     }
@@ -75,11 +75,22 @@
         display: flex;
         border-radius: 6px;
     }
+    #know-more{
+        display: none;
+    }
     #store-img-section{
         position: relative;
         bottom: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
     }
-}
+    #store-img-section #know-more{
+        display: block;
+        padding-right: 5px;
+    }
+} */
 
         /* Hero section styles */
         .hero-section, .knowMore-section, .prescription-section {
@@ -107,6 +118,10 @@
             font-weight: 700;
             font-size: 42px;
             color: rgba(20, 20, 20, 1);
+            margin-top: 15px;
+        }
+        #store-img-section #know-more{
+            display: none;
         }
         .prescription-section{
             padding-top: 0;
@@ -398,6 +413,23 @@
             display: block;
         }
 
+        #section3-t1{
+            /* color: rgba(20, 20, 20, 1); */
+            color: rgba(47, 47, 47, 1); 
+            font-weight: 500;
+            font-family: 'Quicksand';
+            font-weight: 700;
+            font-size: 42px;
+            font-size: 30px;
+        }
+        #know-more{
+            /* font-size: 13px; */
+            font-family: 'Roboto Flex';
+            font-size: 28px;
+            color: rgba(47, 47, 47, 1);
+            font-weight: 500;
+        }
+
         .carousel-inner{
             /* padding-bottom: 25px; */
             /* TODO: Changed today */
@@ -455,9 +487,9 @@
             }
 
 
-            #know-more{
+            /* #know-more{
                 font-size: 13px;
-            }
+            } */
             .knowMore-section .hero-text-column img{
                 width: 50px;
             }
@@ -473,6 +505,37 @@
 
         /* Responsive styles for smaller screens */
         @media (max-width: 767px) {
+
+            .navbar{
+                max-height: 65px;
+            }
+            .logo {
+                max-width: 112px;
+            }
+            .contact-button{
+                font-size: 9px;
+                height: 24px;
+                align-items: center;
+                display: flex;
+                border-radius: 6px;
+            }
+            #know-more{
+                display: none;
+            }
+            #store-img-section{
+                position: relative;
+                bottom: 4px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 15px;
+                /* background-color: aqua; */
+            }
+            #store-img-section #know-more{
+                display: block;
+                padding-right: 5px;
+                margin-top: 0;
+            }
             
             .fontW-H1{
                 font-weight: 600;
@@ -525,7 +588,7 @@
             }
             .image-column img{
                 width: 80vw;
-                padding-bottom: 40px;
+                /* padding-bottom: 40px; */
             }
             #introSection1 .image-column img{
                 padding-bottom: 16% !important;
@@ -654,7 +717,8 @@
             }
 
             #know-more{
-                font-size: 24px;
+                /* font-size: 24px; */
+                font-size: 14px;
             }
             .knowMore-section .hero-text-column img{
                 width: 71px;
@@ -670,6 +734,10 @@
                 font-size: 14px;
                 line-height: 16px;
                 /* background-color: brown; */
+            }
+            #section3-t1 {
+                font-size: 16px;
+                line-height: 16px;
             }
             .secure-section .hero-text-column{
                 margin-left: 5px;
@@ -746,6 +814,7 @@
 
             #chatNow{
                 display: flex;
+                font-size: 12px;
             }
             #contactUs{
                 display: none;
@@ -988,6 +1057,7 @@
             <p>Empower your patients experience with Your Clinic Companion</p>
             <div id="know-more">Know More</div>
             <div id="store-img-section">
+                <div id="know-more">Know More</div>
                 <a href="https://play.google.com/store/apps/details?id=com.ekyamm.app" target="_blank">
                     <img src="public/images/Play-store.png" alt="Play Store">
                 </a>
@@ -1019,7 +1089,7 @@
         <span>
             <p>Peace of Mind:</p>
             <p>
-                <span style="color: rgba(47, 47, 47, 1); font-weight: 500;">Take Control of Your Clinic Data <br></span>
+                <span id="section3-t1">Take Control of Your Clinic Data <br></span>
                 with International Standard AES-256 Encryption, stronger than a&nbsp;
                 <span style="color: rgba(59, 50, 107, 1); font-weight: 500;"> Bank Locker</span>
             </p>
