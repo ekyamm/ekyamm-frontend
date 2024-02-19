@@ -104,6 +104,12 @@
             margin-top: 35px;
         }
 
+        .carousel-item {
+            /* height: 75%; */
+            height: 800px;
+            max-height: fit-content;
+        }
+
         .knowMore-section{
             margin-top: 0;
             /* TODO: Changed today */
@@ -229,7 +235,8 @@
             /* left: -15px;
             bottom: -52px; */
             left: 108px;
-            bottom: -48px;
+            /* bottom: -48px; */
+            bottom: -24px;
         }
         #PSYSharkTankWinner .image-column img{
             /* width: 78%; */
@@ -293,8 +300,10 @@
             /* bottom: -120px; */
         }
         #introSection1{
-            margin-top: 133px;
-            padding-top: 30px;
+            /* margin-top: 133px;
+            padding-top: 30px; */
+            margin-top: 88px;
+            padding-top: 40px;
             padding-bottom: 70px;
         }
         .carousel-item.active #introSection1 {
@@ -961,7 +970,7 @@
             <div id="carousel1" class="carousel-item active">
               <section id="PSYSharkTankWinner" class="hero-section d-flex justify-content-center">
                 <div id="winnerMobile" class="image-column">
-                    <img id="winnerMobileImg" src="public/images/handUI.png" alt="Phone in Hand">
+                    <img id="winnerMobileImg" src="public/images/hand&UI.png" alt="Phone in Hand">
                 </div>
                 <div class="section1-leftcol">
                     <div id="winnerImg" class="image-column">
@@ -1269,14 +1278,14 @@
             if (window.innerWidth <= 768) {
                 winnerMobileImage.src = 'public/images/handUI.png';
             } else {
-                winnerMobileImage.src = 'public/images/hand+UI.png';
+                winnerMobileImage.src = 'public/images/hand&UI.png';
             }
         });
         var winnerMobileImage = document.getElementById('winnerMobileImg');
         if (window.innerWidth <= 768) {
             winnerMobileImage.src = 'public/images/handUI.png';
         } else {
-            winnerMobileImage.src = 'public/images/hand+UI.png';
+            winnerMobileImage.src = 'public/images/hand&UI.png';
         }
 
     </script>
