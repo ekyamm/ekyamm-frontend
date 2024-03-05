@@ -2,7 +2,8 @@
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="icon" href="public/images/logo.svg" type="image/png">
     <title>Ekyamm</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -1193,6 +1194,9 @@
     </div>
 
     <script>
+        // Disable right click
+        // document.addEventListener('contextmenu', event => event.preventDefault());
+
         // JavaScript code to fetch and update the current year
         const currentYearElement = document.getElementById('currentYear');
         const currentYear = new Date().getFullYear();
