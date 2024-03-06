@@ -960,10 +960,19 @@
         });
         });
 
-        // To disable zoom on iOS
-        document.addEventListener('gesturestart', function (e) {
-            e.preventDefault();
-        });
+        // Check if the browser is Safari
+        var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+        // Check if the device is iOS
+        var isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+        // Disable zoom on iOS in Safari
+        if (isiOS && isSafari) {
+            document.addEventListener('gesturestart', function (e) {
+                e.preventDefault();
+            });
+        }
+
         
     </script>
     

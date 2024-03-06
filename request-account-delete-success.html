@@ -2,8 +2,7 @@
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="icon" href="public/images/logo.svg" type="image/png">
     <title>Delete Account Request Successful | Ekyamm</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -17,6 +16,9 @@
             font-family: Arial, sans-serif;
             background: linear-gradient(180deg, #B0A4F5 0%, #EDA197 100%);
             /* min-height: 100vh; */
+
+            /* To disable pinch zoom gestures and and double-tap to zoom on iOS */
+            touch-action: pan-x pan-y;
         }
         
         /* Navbar styles */
@@ -810,6 +812,19 @@
             // Set the value to an element with ID 'success_email'
             document.getElementById('success_email').textContent = userEmail;
         });
+
+        // Check if the browser is Safari
+        var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+        // Check if the device is iOS
+        var isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+        // Disable zoom on iOS in Safari
+        if (isiOS && isSafari) {
+            document.addEventListener('gesturestart', function (e) {
+                e.preventDefault();
+            });
+        }
 
         
     </script>

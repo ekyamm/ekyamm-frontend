@@ -2,20 +2,21 @@
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="icon" href="public/images/logo.svg" type="image/png">
     <title>Ekyamm</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="./styles.css"> -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,500;8..144,600&family=Quicksand:wght@500;700&family=Roboto+Serif:opsz,wght@8..144,600;8..144,700&display=swap');
 
         body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-image: linear-gradient(to bottom, rgba(176, 164, 245, 0.9) , rgba(237, 161, 151, 0.9));
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(to bottom, rgba(176, 164, 245, 0.9) , rgba(237, 161, 151, 0.9));
+    
+            /* To disable pinch zoom gestures and and double-tap to zoom on iOS */
+            touch-action: pan-x pan-y;
 }
 
 /* Navbar styles */
@@ -1275,6 +1276,20 @@
         } else {
             winnerMobileImage.src = 'public/images/hand&UIComp.png';
         }
+
+        // Check if the browser is Safari
+        var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+        // Check if the device is iOS
+        var isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+        // Disable zoom on iOS in Safari
+        if (isiOS && isSafari) {
+            document.addEventListener('gesturestart', function (e) {
+                e.preventDefault();
+            });
+        }
+
 
     </script>
 
