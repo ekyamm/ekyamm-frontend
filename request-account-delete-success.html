@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="icon" href="public/images/logo.svg" type="image/png">
-    <title>Delete Account Request | Ekyamm</title>
+    <title>Delete Account Request Successful | Ekyamm</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <style>
@@ -17,9 +17,6 @@
             font-family: Arial, sans-serif;
             background: linear-gradient(180deg, #B0A4F5 0%, #EDA197 100%);
             /* min-height: 100vh; */
-
-            /* To disable pinch zoom gestures and and double-tap to zoom on iOS */
-            touch-action: pan-x pan-y;
         }
         
         /* Navbar styles */
@@ -129,8 +126,10 @@
             align-items: center;
             font-family: 'Quicksand';
             /* color: #746B76; */
+            height: 80vh;
         }
         #delete-account-info p{
+            width: 40%;
             margin-bottom: 0;
             font-size: 20px;
             font-weight: 600;
@@ -158,6 +157,7 @@
             align-items: center;
             margin-top: 10px;
             /* margin-bottom: 30px; */
+            margin-bottom: 20%;
         }
 
         #email-container div{
@@ -267,7 +267,10 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                justify-content: center;
+                /* justify-content: center; */
+            }
+            #delete-account-info p{
+                width: 80%;
             }
             #delete-account-info p, #delete-account-info li{
                 text-align: center;
@@ -325,8 +328,11 @@
             #delete-account-info{
                 display: flex;
                 flex-direction: column;
-                align-items: start;
-                justify-content: left;
+                align-items: center;
+                /* justify-content: center; */
+            }
+            #delete-account-info p{
+                width: 100%;
             }
             #delete-account-info p, #delete-account-info li{
                 margin-bottom: 0;
@@ -514,22 +520,6 @@
             z-index: -1;
         }
 
-        #delete-section{
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            max-height: max-content;
-            /* background-color: #666666; */
-            margin-bottom: 25%;
-        }
-        #delete-section sub-section{
-            /* width: 50%; */
-            height: max-content;
-        }
-        #delete-section #delete-account-info{
-            margin-top: 5%;
-        }
-
         #request:disabled {
             /* background: #cccccc;  */
             opacity: 0.5;
@@ -602,7 +592,7 @@
             /* Transition effect for top property */
             transition: top 0.5s ease-in-out; 
         }
-        /* #success_popup_box #info_text{
+        #success_popup_box #info_text{
             font-family: 'Quicksand';
             font-size: 20px;
             font-weight: 600;
@@ -614,22 +604,6 @@
         #success_popup_box #info_text svg{
             height: 30px;
             width: 30px;
-        } */
-
-        /* Responsive styles for tablets */
-        @media (min-width: 768px) and (max-width: 991px) {
-            #delete-section{
-                display: flex;
-                flex-direction: column;
-            }
-            #delete-section #delete-account-info{
-                margin-top: 0px;
-                padding-right: 0rem !important;
-            }
-            #delete-section #email-container{
-                padding-left: 0rem !important;
-            }
-        
         }
 
         /* Media query for screens with a maximum width of 767px (typical mobile devices) */
@@ -639,27 +613,18 @@
                 font-weight: 500;
                 line-height: 15px;
             }
-
-            #delete-section{
-                display: flex;
-                flex-direction: column;
-            }
-            #delete-section #delete-account-info{
-                margin-top: 0px;
-                padding-right: 0rem !important;
-            }
-            #delete-section #email-container{
-                padding-left: 0rem !important;
-            }
             
-            /* #success_popup_box #info_text svg{
+            #success_popup_box #info_text svg{
                 height: 15px;
                 width: 15px;
-            } */
+            }
         }
     </style>
     
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- <script src = "https://ajax.googleapis.com/ajax/libs/jQuery/3.5.1/jquery.min.js"></script> -->
 </head>
 <body>
     
@@ -682,26 +647,12 @@
         <span></span>
     </section>
 
-    <section id="delete-section">
-        <sub-section id="delete-account-info" class="pr-4">
-            <div>
-                <p>Deleting your account will:</p>
-                <ul>
-                    <li>Delete your data history</li>
-                    <li>Delete your account info</li>
-                    <li>Delete your access from all Ekyamm features</li>
-                </ul>
-            </div>
-        </sub-section>
-    
-        <sub-section align="center" id="email-container" class="pl-4">
-            <div>
-                <p>Enter Your Registered Email</p>
-                <input id="deleteAccEmail" type="email" placeholder="Enter your registered email">
-                <br>
-                <button id="request">Request</button>
-            </div>
-        </sub-section>
+    <section id="delete-account-info">
+        <!-- <div> -->
+            <p>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><defs><style>.cls-1{fill:#fff;opacity:0;}.cls-2{fill:#11805D;}</style></defs><title>checkmark-circle-2</title><g id="Layer_2" data-name="Layer 2"><g id="checkmark-circle-2"><g id="checkmark-circle-2-2" data-name="checkmark-circle-2"><rect class="cls-1" width="24" height="24"/><path class="cls-2" d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm4.3,7.61-4.57,6a1,1,0,0,1-.79.39h0a1,1,0,0,1-.79-.38L7.71,12.51a1,1,0,0,1,1.58-1.23l1.63,2.08,3.78-5a1,1,0,1,1,1.6,1.22Z"/></g></g></g></svg> &nbsp; <span id="success_text">Your request has successfully been received.<br>An email confirmation has been send to your registered email id "<span id="success_email"></span>"</span>
+            </p>
+        <!-- </div> -->
     </section>
     
     <footer style="background-color: rgba(255, 255, 255, 1);">
@@ -730,11 +681,11 @@
         </p>
     </div>
 
-    <!-- <div id="success_popup_box">
+    <div id="success_popup_box">
         <p id="info_text">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><defs><style>.cls-1{fill:#fff;opacity:0;}.cls-2{fill:#11805D;}</style></defs><title>checkmark-circle-2</title><g id="Layer_2" data-name="Layer 2"><g id="checkmark-circle-2"><g id="checkmark-circle-2-2" data-name="checkmark-circle-2"><rect class="cls-1" width="24" height="24"/><path class="cls-2" d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm4.3,7.61-4.57,6a1,1,0,0,1-.79.39h0a1,1,0,0,1-.79-.38L7.71,12.51a1,1,0,0,1,1.58-1.23l1.63,2.08,3.78-5a1,1,0,1,1,1.6,1.22Z"/></g></g></g></svg> &nbsp; <span id="success_text">Your request has successfully been received. An email confirmation has been send to your registered email id "<span id="success_email"></span>"</span>
         </p>
-    </div> -->
+    </div>
 
     <!-- The form -->
     <div class="form-popup" id="contactUsForm">
@@ -835,135 +786,31 @@
         })
 
         $(document).ready(function() {
-            $("#request").click(function(){
 
-                const email = $('#deleteAccEmail').val()
-                const submitButton = $(this);
-                const errorPopup = $('#error_popup_box');
-                const errorText = $('#error_text');
-                // const successPopup = $('#success_popup_box');
-                // const successEmail = $('#success_email');
-
-                if (email !== '' && email) {
-                    
-                    // Disable the submit button
-                    submitButton.prop('disabled', true);
-
-                    // Show a loader inside the submit button
-                    submitButton.html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Requesting...');
-
-                    $.ajax({
-                        type: "post",
-                        url: "https://dev.ekyamm.com/v1/user/requestAccountDelete",
-                        data: {
-                            email: email
-                        },
-                        success: function(response) {
-                            // console.log(response);
-
-                            // Clear the input field
-                            $('#deleteAccEmail').val('');
-
-                            // // Set the dynamic email
-                            // successEmail.text(email);
-
-                            // // Set the visibility and display properties
-                            // successPopup.css({
-                            //     'visibility': 'visible',
-                            //     'display': 'block'
-                            // });
-                            // // Display the error popup
-                            // successPopup.addClass('active');
-
-                            // // Automatically hide the error popup after 5 seconds
-                            // setTimeout(function () {
-                            //     successPopup.removeClass('active');
-
-                            //     // Reset the visibility and display properties
-                            //     successPopup.css({
-                            //         'visibility': 'hidden',
-                            //         'display': 'none'
-                            //     });
-                            // }, 8000);
-
-                            // Enable the submit button after the AJAX call is successful
-                            submitButton.prop('disabled', false);
-
-                            // Restore the original content of the submit button
-                            submitButton.html('Request');
-
-                            // Set the email in a cookie
-                            document.cookie = "user_email=" + encodeURIComponent(email);
-
-                            // Redirect to another page
-                            window.location.href = "request-account-delete-success.html";
-                        },
-                        error: function (error) {
-                            console.log(error?.responseJSON?.error?.message);
-                            // Enable the submit button in case of an error
-                            submitButton.prop('disabled', false);
-                            
-                            // Restore the original content of the submit button
-                            submitButton.html('Request');
-
-                            // Set the dynamic error text based on the error response
-                            errorText.text(error?.responseJSON?.error?.message || "Unable to process your request. Try again.");
-
-                            // Set the visibility and display properties
-                            errorPopup.css({
-                                'visibility': 'visible',
-                                'display': 'block'
-                            });
-                            // Display the error popup
-                            errorPopup.addClass('active');
-
-                            // Automatically hide the error popup after 5 seconds
-                            setTimeout(function () {
-                                errorPopup.removeClass('active');
-
-                                // Reset the visibility and display properties
-                                errorPopup.css({
-                                    'visibility': 'hidden',
-                                    'display': 'none'
-                                });
-                            }, 5000);
-                            
-                        }
-                    });
-                } else {
-                    // alert("Please provide email")
-                    const errorPopup = $('#error_popup_box');
-                    const errorText = $('#error_text');
-
-                    // Set the dynamic error text based on the error response
-                    errorText.text("Please provide registered email id to request account delete");
-
-                    // Set the visibility and display properties
-                    errorPopup.css({
-                        'visibility': 'visible',
-                        'display': 'block'
-                    });
-                    // Display the error popup
-                    errorPopup.addClass('active');
-
-                    // Automatically hide the error popup after 5 seconds
-                    setTimeout(function () {
-                        errorPopup.removeClass('active');
-
-                        // Reset the visibility and display properties
-                        errorPopup.css({
-                            'visibility': 'hidden',
-                            'display': 'none'
-                        });
-                    }, 5000);
+            // Function to get the value of a cookie by name
+            function getCookie(name) {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    if (cookie.startsWith(name + '=')) {
+                        return decodeURIComponent(cookie.substring(name.length + 1));
+                    }
                 }
-        });
+                return null;
+            }
+    
+            // Grab the value of 'user_email' cookie
+            const userEmail = getCookie('user_email');
+
+            if (userEmail == null || !userEmail) {
+                // Redirect to home page
+                window.location.href = "index.html";
+            }
+    
+            // Set the value to an element with ID 'success_email'
+            document.getElementById('success_email').textContent = userEmail;
         });
 
-        // To disable zoom on iOS
-        document.addEventListener('gesturestart', function (e) {
-            e.preventDefault();
-        });
         
     </script>
     
