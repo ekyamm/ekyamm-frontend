@@ -556,7 +556,7 @@
             align-items: center;
             justify-content: center;
             /* Transition effect for top property */
-            transition: top 0.5s ease-in-out; 
+            transition: top 0.7s ease-in-out; 
         }
         #error_popup_box.active, #success_popup_box.active {
             top: 5%; /* Display it at 5% from the top when active */
@@ -837,14 +837,73 @@
         $(document).ready(function() {
             $("#request").click(function(){
 
-                const email = $('#deleteAccEmail').val()
+                let email = $('#deleteAccEmail').val().trim();
                 const submitButton = $(this);
                 const errorPopup = $('#error_popup_box');
                 const errorText = $('#error_text');
                 // const successPopup = $('#success_popup_box');
                 // const successEmail = $('#success_email');
 
-                if (email !== '' && email) {
+                // Check for valid email format
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (email === '' && !email){
+                    // alert("Please provide email")
+                    const errorPopup = $('#error_popup_box');
+                    const errorText = $('#error_text');
+
+                    // Set the dynamic error text based on the error response
+                    errorText.text("Please provide registered email id to request account delete");
+
+                    // Set the visibility and display properties
+                    errorPopup.css({
+                        'visibility': 'visible',
+                        'display': 'block'
+                    });
+                    // Display the error popup
+                    errorPopup.addClass('active');
+
+                    // Automatically hide the error popup after 5 seconds
+                    setTimeout(function () {
+                        errorPopup.removeClass('active');
+
+                        // Reset the visibility and display properties
+                        errorPopup.css({
+                            'visibility': 'hidden',
+                            'display': 'none'
+                        });
+                    }, 5000);
+
+                } else if (!emailRegex.test(email)) {
+                    // alert('Please enter a valid email address');
+                    const errorPopup = $('#error_popup_box');
+                    const errorText = $('#error_text');
+
+                    // Set the dynamic error text based on the error response
+                    errorText.text("Please enter a valid email address");
+
+                    // Set the visibility and display properties
+                    errorPopup.css({
+                        'visibility': 'visible',
+                        'display': 'block'
+                    });
+                    // Display the error popup
+                    errorPopup.addClass('active');
+
+                    // Automatically hide the error popup after 5 seconds
+                    setTimeout(function () {
+                        errorPopup.removeClass('active');
+
+                        // Reset the visibility and display properties
+                        errorPopup.css({
+                            'visibility': 'hidden',
+                            'display': 'none'
+                        });
+                    }, 5000);
+                    
+                } else {
+
+                    // Convert email to lowercase
+                    email = email.toLowerCase();
                     
                     // Disable the submit button
                     submitButton.prop('disabled', true);
@@ -930,33 +989,7 @@
                             
                         }
                     });
-                } else {
-                    // alert("Please provide email")
-                    const errorPopup = $('#error_popup_box');
-                    const errorText = $('#error_text');
-
-                    // Set the dynamic error text based on the error response
-                    errorText.text("Please provide registered email id to request account delete");
-
-                    // Set the visibility and display properties
-                    errorPopup.css({
-                        'visibility': 'visible',
-                        'display': 'block'
-                    });
-                    // Display the error popup
-                    errorPopup.addClass('active');
-
-                    // Automatically hide the error popup after 5 seconds
-                    setTimeout(function () {
-                        errorPopup.removeClass('active');
-
-                        // Reset the visibility and display properties
-                        errorPopup.css({
-                            'visibility': 'hidden',
-                            'display': 'none'
-                        });
-                    }, 5000);
-                }
+                } 
         });
         });
 
