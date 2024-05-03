@@ -206,10 +206,10 @@
         }
         #PSYSharkTankWinner #schedule-demo2{
             width: inherit;
-            color: #BE4D68;
+            color: #EDA197;
             /* Transparent background */
             background-color: rgba(255, 255, 255, 0.048) !important;  
-            border: 2px solid #BE4D68;
+            border: 2px solid #EDA197;
             padding: 10px;
             border-radius: 14px;
             cursor: pointer;
@@ -227,7 +227,13 @@
             width: min-content;
         }
         .section1-leftcol{
-            width: 75%;
+            width: 85%;
+        }
+        .section1-leftcol img{
+            width: 55rem;
+        }
+        #carousel1{
+            background: linear-gradient(107.97deg, #7B7194 0%, #51476E 76.05%);
         }
         #winnerImg div{
             display: flex;
@@ -246,7 +252,7 @@
         #winnerMobile img{
             width: 788px;
             position: relative;
-            left: 120px;
+            left: 200px;
             bottom: -24px;
         }
         #PSYSharkTankWinner #winnerImg{
@@ -617,7 +623,7 @@
             }
 
             .carousel-item {
-                height: 630px;
+                height: 600px;
                 max-height: fit-content;
             }
 
@@ -645,7 +651,7 @@
             }
             .section1-leftcol{
                 width: 100vw;
-                padding-top: 1rem;
+                /* padding-top: 1rem; */
             }
             #PSYSharkTankWinner #winnerImg {
                 width: 100%;
@@ -657,7 +663,7 @@
                 justify-content: center; */
             }
             #PSYSharkTankWinner #winnerImg img{
-                width: 60%;
+                width: 100%;
                 padding-bottom: 0;
                 /* background-color: tomato; */
             } 
@@ -671,11 +677,11 @@
                 height: auto;
             }
             #winnerMobile img{
-                width: 90vw;
+                width: 80vw;
                 position: relative;
                 left: -23px;
                 bottom: -38px;
-                bottom: -5vh;
+                bottom: -2vh;
             }
             #PSYSharkTankWinner #winnerImg p{
                 font-family: 'Roboto Flex';
@@ -983,7 +989,7 @@
 
     <!-- class="carousel-fade" -->
     <!-- data-interval="5000" -->
-    <div id="carouselEkyammIndicators" class="carousel slide" style="z-index: 6;" data-ride="" data-interval="4000">
+    <div id="carouselEkyammIndicators" class="carousel slide" style="z-index: 6;" data-ride="" data-interval="400">
         <ol class="carousel-indicators" style="z-index: 11;">
           <li data-target="#carouselEkyammIndicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselEkyammIndicators" data-slide-to="1"></li>
@@ -996,19 +1002,20 @@
                 </div>
                 <div class="section1-leftcol">
                     <div id="winnerImg" class="image-column">
-                        <div id="sharkTankWinner-section">
+                        <img src="public/images/Ekyamm-Awardsgs.png" alt="Ekyamm Awards">
+                        <!-- <div id="sharkTankWinner-section">
                             <img id="winnerLogo" src="public/images/WinnerLogo-Section1.png" alt="PSY Shark Tank Winner">
                             <img id="winnerLogo" src="public/images/certificate-of-excellence.png" alt="Certificate of excellence award">
-                        </div>
-                        <div id="conference-section">
+                        </div> -->
+                        <!-- <div id="conference-section">
                             <p>
                                 24th Annual National Conference, Nov 2023 <br> <span>Indian Association of Private Psychiatry</span>
                             </p>
                             <img id="psychiatric-association-logo" src="public/images/association.png" alt="World Psychiatric Association">
-                        </div>
+                        </div> -->
                         <button id="schedule-demo2" class="schedule-btn">
                             Schedule Demo
-                            <img src="public/images/redArrow.svg" alt="">
+                            <img src="public/images/red-arrow.svg" alt="">
                         </button>
                     </div>
                 </div>
@@ -1250,7 +1257,7 @@
 
             ekyammLogos.forEach(function(logo) {
                 logo.addEventListener('click', function() {
-                    window.location.href = 'index.html';
+                    window.location.href = '/';
                 });
             });
         });
