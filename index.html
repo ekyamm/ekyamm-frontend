@@ -36,6 +36,40 @@
     align-items: center;
 }
 
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin-right: 35px; /* Spacing between menu options */
+    font-family: 'Roboto Flex';
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: inherit; /* or a specific color */
+    font-size: 16px; /* Adjust as needed */
+}
+
+/* Highlight the active menu item */
+.menu li.active a {
+    font-weight: 700;
+    color: #776EA5;
+}
+
 /* Logo styles */
 .logo {
     /* height: 45px; */
@@ -100,7 +134,7 @@
             align-items: center;
             justify-content: space-between;
             /* padding: 30px 90px; */
-            padding: 50px 90px;
+            padding: 50px 30px;
             /* Transparent background */
             background-color: rgba(255, 255, 255, 0.048); 
             margin-top: 35px;
@@ -138,13 +172,20 @@
         /* Text column styles */
         .hero-text-column {
             width: 50vw;
-            max-width: 600px;
+            max-width: 670px;
             margin: 25px;
         }
         .knowMore-section .hero-text-column {
             margin-left: 81px;
         }
-        .hero-text-column h1, .form-container h1{
+        .hero-text-column h1{
+            font-size: 60px;
+            font-family: 'Quicksand';
+            font-weight: 700;
+            /* color: rgba(0, 0, 0, 1); */
+            color: #000000;
+        }
+        .form-container h1{
             font-size: 60px;
             font-family: 'Roboto Serif';
             /* color: rgba(0, 0, 0, 1); */
@@ -187,6 +228,45 @@
             /* width: 550px; */
             width: 100%;
         }
+
+        /* .hero-section .image-column{
+            display: flex;
+            align-items: flex-end !important; 
+            justify-content: center;
+            height: 100% !important; 
+        }
+        .hero-section .image-column img{
+            position: absolute !important;
+            width: inherit;
+            bottom: -16.8% !important;
+        } */
+
+        .hero-section {
+            display: flex;
+            align-items: flex-end; /* Align content to the bottom */
+            justify-content: space-between;
+            height: 100vh; /* Ensures full viewport height */
+            position: relative;
+            padding-bottom: 20px; 
+        }
+
+        .hero-section .image-column {
+            /* transform: translateX(-90%); */
+            /* width: 100%; */
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-section .image-column img {
+            position: absolute;
+            bottom: 0;
+            /* left: 50%; */
+            max-width: 100%;
+            height: auto;
+            width: inherit;
+        }
+
+
         #PSYSharkTankWinner{
             display: flex;
             align-items: center;
@@ -319,11 +399,12 @@
             /* bottom: -120px; */
         }
         #introSection1{
-            /* margin-top: 133px;
-            padding-top: 30px; */
-            margin-top: 88px;
+            /* margin-top: 88px; */
+            margin-top: -40px;
             padding-top: 40px;
             padding-bottom: 70px;
+            justify-content: center;
+            align-items: center;
         }
         .carousel-item.active #introSection1 {
             /* padding-bottom: 70px; */
@@ -384,7 +465,8 @@
         }
 
         .secure-section{
-            background-color: rgba(255, 255, 255, 0.048);
+            /* background-color: rgba(255, 255, 255, 0.048); */
+            background-color: #E4B4AE;
             padding: 50px;
             padding-top: 35px;
             padding-bottom: 35px;
@@ -786,13 +868,29 @@
             .image-column2{
                 margin-left: 0 !important;
             }
-            .secure-section-part1 .image-column2 img {
-                width: 27vw !important;
+            /* #secure-section-part1 #heart-plus-container{
+                width: 20vw;
+            }
+            #secure-section-part1 #heart-plus-container img{
+                width: 20px !important;
+            }
+            #secure-section-part1 .image-column2 img {
+                width: 27vw;
                 padding-bottom: 22px;
             }
             #secure-section-part1 {
                 margin-bottom: 10px;
             }
+            .bullet-ui{
+                font-family: 'Roboto Serif';
+                font-weight: 700 !important;
+                font-size: 37px !important;
+                line-height: 48px !important;
+                letter-spacing: 0%;
+                vertical-align: middle;
+            } */
+
+
             .secure-section p{
                 margin-left: 30px;
                 /* margin-right: 30px; */
@@ -982,14 +1080,23 @@
         <!-- Company Logo (left align) -->
         <img src="public/images/ekyamm-white.png" alt="Company Logo" class="logo ekyamm-logo">
 
-        <!-- Contact Us button (right align) -->
-        <button id="chatNow" class="brand-btn contact-button">Chat Now</button>
-        <button id="contactUs" class="brand-btn contact-button">Contact Us</button>
+        <!-- Right side container -->
+        <div class="nav-right">
+            <!-- Menu Options -->
+            <ul class="menu">
+                <li><a href="mh-practitioner.html">MH Practitioner</a></li>
+                <li class="active"><a href="fertility.html">Fertility</a></li>
+            </ul>
+
+            <!-- Buttons -->
+            <div class="buttons">
+                <button id="chatNow" class="brand-btn contact-button">Chat Now</button>
+                <button id="contactUs" class="brand-btn contact-button">Contact Us</button>
+            </div>
+        </div>
     </div>
 
-    <!-- class="carousel-fade" -->
-    <!-- data-interval="5000" -->
-    <div id="carouselEkyammIndicators" class="carousel slide" style="z-index: 6;" data-ride="" data-interval="400">
+    <!-- <div id="carouselEkyammIndicators" class="carousel slide" style="z-index: 6;" data-ride="" data-interval="400">
         <ol class="carousel-indicators" style="z-index: 11;">
           <li data-target="#carouselEkyammIndicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselEkyammIndicators" data-slide-to="1"></li>
@@ -1003,27 +1110,12 @@
                 <div class="section1-leftcol">
                     <div id="winnerImg" class="image-column">
                         <img src="public/images/Ekyamm-Awardsgs.png" alt="Ekyamm Awards">
-                        <!-- <div id="sharkTankWinner-section">
-                            <img id="winnerLogo" src="public/images/WinnerLogo-Section1.png" alt="PSY Shark Tank Winner">
-                            <img id="winnerLogo" src="public/images/certificate-of-excellence.png" alt="Certificate of excellence award">
-                        </div> -->
-                        <!-- <div id="conference-section">
-                            <p>
-                                24th Annual National Conference, Nov 2023 <br> <span>Indian Association of Private Psychiatry</span>
-                            </p>
-                            <img id="psychiatric-association-logo" src="public/images/association.png" alt="World Psychiatric Association">
-                        </div> -->
                         <button id="schedule-demo2" class="schedule-btn">
                             Schedule Demo
                             <img src="public/images/red-arrow.svg" alt="">
                         </button>
                     </div>
                 </div>
-                <!-- <div class="svgs">
-                    <img src="public/images/Wave.svg" alt="">
-                    <svg id="wave" style="transform:rotate(0deg); transition: 0.3s;" viewBox="0 0 1440 490" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(217, 217, 217, 1)" offset="0%"></stop><stop stop-color="rgba(217, 217, 217, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,343L120,359.3C240,376,480,408,720,351.2C960,294,1200,147,1440,81.7C1680,16,1920,33,2160,32.7C2400,33,2640,16,2880,8.2C3120,0,3360,0,3600,32.7C3840,65,4080,131,4320,130.7C4560,131,4800,65,5040,49C5280,33,5520,65,5760,106.2C6000,147,6240,196,6480,204.2C6720,212,6960,180,7200,179.7C7440,180,7680,212,7920,236.8C8160,261,8400,278,8640,310.3C8880,343,9120,392,9360,408.3C9600,425,9840,408,10080,375.7C10320,343,10560,294,10800,269.5C11040,245,11280,245,11520,261.3C11760,278,12000,310,12240,310.3C12480,310,12720,278,12960,236.8C13200,196,13440,147,13680,155.2C13920,163,14160,229,14400,269.5C14640,310,14880,327,15120,334.8C15360,343,15600,343,15840,326.7C16080,310,16320,278,16560,261.3C16800,245,17040,245,17160,245L17280,245L17280,490L17160,490C17040,490,16800,490,16560,490C16320,490,16080,490,15840,490C15600,490,15360,490,15120,490C14880,490,14640,490,14400,490C14160,490,13920,490,13680,490C13440,490,13200,490,12960,490C12720,490,12480,490,12240,490C12000,490,11760,490,11520,490C11280,490,11040,490,10800,490C10560,490,10320,490,10080,490C9840,490,9600,490,9360,490C9120,490,8880,490,8640,490C8400,490,8160,490,7920,490C7680,490,7440,490,7200,490C6960,490,6720,490,6480,490C6240,490,6000,490,5760,490C5520,490,5280,490,5040,490C4800,490,4560,490,4320,490C4080,490,3840,490,3600,490C3360,490,3120,490,2880,490C2640,490,2400,490,2160,490C1920,490,1680,490,1440,490C1200,490,960,490,720,490C480,490,240,490,120,490L0,490Z"></path></svg>
-                    <span></span>
-                </div> -->
               </section>
             </div>
             <div id="carousel2" class="carousel-item">
@@ -1044,51 +1136,45 @@
                     <div class="image-column">
                         <img src="public/images/heroMobile-3-screens.png" alt="Your Image">
                     </div>
-                    <!-- <div class="svgs">
-                        <img src="public/images/Wave.svg" alt="">
-                        <svg id="wave2" style="transform:rotate(0deg); transition: 0.3s;" viewBox="0 0 1440 490" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(217, 217, 217, 1)" offset="0%"></stop><stop stop-color="rgba(217, 217, 217, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,343L120,359.3C240,376,480,408,720,351.2C960,294,1200,147,1440,81.7C1680,16,1920,33,2160,32.7C2400,33,2640,16,2880,8.2C3120,0,3360,0,3600,32.7C3840,65,4080,131,4320,130.7C4560,131,4800,65,5040,49C5280,33,5520,65,5760,106.2C6000,147,6240,196,6480,204.2C6720,212,6960,180,7200,179.7C7440,180,7680,212,7920,236.8C8160,261,8400,278,8640,310.3C8880,343,9120,392,9360,408.3C9600,425,9840,408,10080,375.7C10320,343,10560,294,10800,269.5C11040,245,11280,245,11520,261.3C11760,278,12000,310,12240,310.3C12480,310,12720,278,12960,236.8C13200,196,13440,147,13680,155.2C13920,163,14160,229,14400,269.5C14640,310,14880,327,15120,334.8C15360,343,15600,343,15840,326.7C16080,310,16320,278,16560,261.3C16800,245,17040,245,17160,245L17280,245L17280,490L17160,490C17040,490,16800,490,16560,490C16320,490,16080,490,15840,490C15600,490,15360,490,15120,490C14880,490,14640,490,14400,490C14160,490,13920,490,13680,490C13440,490,13200,490,12960,490C12720,490,12480,490,12240,490C12000,490,11760,490,11520,490C11280,490,11040,490,10800,490C10560,490,10320,490,10080,490C9840,490,9600,490,9360,490C9120,490,8880,490,8640,490C8400,490,8160,490,7920,490C7680,490,7440,490,7200,490C6960,490,6720,490,6480,490C6240,490,6000,490,5760,490C5520,490,5280,490,5040,490C4800,490,4560,490,4320,490C4080,490,3840,490,3600,490C3360,490,3120,490,2880,490C2640,490,2400,490,2160,490C1920,490,1680,490,1440,490C1200,490,960,490,720,490C480,490,240,490,120,490L0,490Z"></path></svg>
-                        <span></span>
-                    </div> -->
                 </section>
             </div>
         </div>
-        <!-- <a class="carousel-control-prev" href="#carouselEkyammIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselEkyammIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a> -->
-      </div>
-    
-    <!-- Hero section -->
-    <!-- <section class="hero-section">
+      </div> -->
+
+    <section id="introSection1" class="hero-section">
+        <div class="image-column">
+            <img src="public/images/patient-doctor.png" alt="Patient Doctor">
+        </div> 
+        
         <div class="hero-text-column">
-            <h1>
-                <span class="brand-text">Enhance</span>&nbsp;the value of your clinic
+            <h1 style="padding-top: 50px;">
+                Enhance Your Patient Care with Mind-Body-Emotional Balance
             </h1>
+            <br>
             <p>
-                <span class="brand-text brand-text-bold">Ekyamm</span>&nbsp;runs on International Standard security with AES-256 encryption for&nbsp;<span class="brand-text brand-text-bold">controlled and confidential data management</span>
+                Ekyamm empowers your treatment plans by seamlessly integrating emotional well-being support into the treatment journey.
             </p>
-            <button class="brand-btn schedule-btn">
-                Schedule Demo
+            <br>
+            <button id="schedule-demo" class="brand-btn schedule-btn" style="padding: 10px 20px 12px 20px; 
+                gap: 14px;
+                font-family: Quicksand;
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 100%;
+                letter-spacing: 0%;
+                text-align: center;
+                vertical-align: middle;
+                ">
+                Start Now
                 <img src="public/images/Arrow.svg" alt="">
             </button>
         </div>
-
-        <div class="image-column">
-            <img src="public/images/hero-mobile-3-screens.png" alt="Your Image">
-        </div>
-    </section> -->
-
+    </section>
+    
+    
     <!-- 2nd section -->
-    <section class="knowMore-section">
-        <!-- <div class="svgs">
-            <svg id="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 350" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(217, 217, 217, 1)" offset="0%"></stop><stop stop-color="rgba(217, 217, 217, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,280L80,256.7C160,233,320,187,480,175C640,163,800,187,960,163.3C1120,140,1280,70,1440,58.3C1600,47,1760,93,1920,99.2C2080,105,2240,70,2400,58.3C2560,47,2720,58,2880,58.3C3040,58,3200,47,3360,58.3C3520,70,3680,105,3840,145.8C4000,187,4160,233,4320,256.7C4480,280,4640,280,4800,250.8C4960,222,5120,163,5280,169.2C5440,175,5600,245,5760,280C5920,315,6080,315,6240,262.5C6400,210,6560,105,6720,81.7C6880,58,7040,117,7200,151.7C7360,187,7520,198,7680,210C7840,222,8000,233,8160,239.2C8320,245,8480,245,8640,256.7C8800,268,8960,292,9120,262.5C9280,233,9440,152,9600,116.7C9760,82,9920,93,10080,128.3C10240,163,10400,222,10560,256.7C10720,292,10880,303,11040,297.5C11200,292,11360,268,11440,256.7L11520,245L11520,350L11440,350C11360,350,11200,350,11040,350C10880,350,10720,350,10560,350C10400,350,10240,350,10080,350C9920,350,9760,350,9600,350C9440,350,9280,350,9120,350C8960,350,8800,350,8640,350C8480,350,8320,350,8160,350C8000,350,7840,350,7680,350C7520,350,7360,350,7200,350C7040,350,6880,350,6720,350C6560,350,6400,350,6240,350C6080,350,5920,350,5760,350C5600,350,5440,350,5280,350C5120,350,4960,350,4800,350C4640,350,4480,350,4320,350C4160,350,4000,350,3840,350C3680,350,3520,350,3360,350C3200,350,3040,350,2880,350C2720,350,2560,350,2400,350C2240,350,2080,350,1920,350C1760,350,1600,350,1440,350C1280,350,1120,350,960,350C800,350,640,350,480,350C320,350,160,350,80,350L0,350Z"></path></svg>
-            <svg id="wave" style="transform:rotate(0deg); transition: 0.3s;" viewBox="0 0 1440 490" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(217, 217, 217, 1)" offset="0%"></stop><stop stop-color="rgba(217, 217, 217, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,343L120,359.3C240,376,480,408,720,351.2C960,294,1200,147,1440,81.7C1680,16,1920,33,2160,32.7C2400,33,2640,16,2880,8.2C3120,0,3360,0,3600,32.7C3840,65,4080,131,4320,130.7C4560,131,4800,65,5040,49C5280,33,5520,65,5760,106.2C6000,147,6240,196,6480,204.2C6720,212,6960,180,7200,179.7C7440,180,7680,212,7920,236.8C8160,261,8400,278,8640,310.3C8880,343,9120,392,9360,408.3C9600,425,9840,408,10080,375.7C10320,343,10560,294,10800,269.5C11040,245,11280,245,11520,261.3C11760,278,12000,310,12240,310.3C12480,310,12720,278,12960,236.8C13200,196,13440,147,13680,155.2C13920,163,14160,229,14400,269.5C14640,310,14880,327,15120,334.8C15360,343,15600,343,15840,326.7C16080,310,16320,278,16560,261.3C16800,245,17040,245,17160,245L17280,245L17280,490L17160,490C17040,490,16800,490,16560,490C16320,490,16080,490,15840,490C15600,490,15360,490,15120,490C14880,490,14640,490,14400,490C14160,490,13920,490,13680,490C13440,490,13200,490,12960,490C12720,490,12480,490,12240,490C12000,490,11760,490,11520,490C11280,490,11040,490,10800,490C10560,490,10320,490,10080,490C9840,490,9600,490,9360,490C9120,490,8880,490,8640,490C8400,490,8160,490,7920,490C7680,490,7440,490,7200,490C6960,490,6720,490,6480,490C6240,490,6000,490,5760,490C5520,490,5280,490,5040,490C4800,490,4560,490,4320,490C4080,490,3840,490,3600,490C3360,490,3120,490,2880,490C2640,490,2400,490,2160,490C1920,490,1680,490,1440,490C1200,490,960,490,720,490C480,490,240,490,120,490L0,490Z"></path></svg>
-            <span></span>
-        </div> -->
+    <section class="knowMore-section" style="position: relative;
+    z-index: 1;">
         <!-- Image column -->
         <div class="image-column" style="position: relative;z-index: 6;">
             <img src="public/images/Women-Section-2comp.png" alt="Your Image">
@@ -1113,44 +1199,121 @@
             </div>
         </div>
 
+        
+        <div class="fade-effect" style="position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50px; /* Adjust the fade height */
+        background: linear-gradient(to top, #E4B4AE, transparent); /* Section 2 color fading into Section 1 */
+        z-index: 200; /* Ensures it stays on top */"></div> <!-- Separate div for gradient -->
     </section>
 
     <!-- 3rd section -->
     <section class="secure-section">
         <div id="secure-section-part1">
             <!-- Image column -->
-            <div class="image-column2">
-                <img src="public/images/Locker.png" alt="Locker">
+            <div id="heart-plus-container">
+                <img width="350" src="public/images/heart-plus.png" alt="Heart Plus">
             </div>
     
             <!-- Text column -->
-            <div class="hero-text-column">
-                <h1 class="fontW-H1">Authorised
-                    Private
-                    Secure
-                    Confidential</h1>
+            <div id="heart-plus-text">
+                <ul>
+                    <li style="font-family: 'Roboto Serif', serif;
+                        font-weight: 700;
+                        font-size: 37px;
+                        line-height: 48px;
+                        letter-spacing: 0;
+                        vertical-align: middle;
+                        color: #2F2F2F;
+                    ">Zero Cost to the Clinic</li>
+                    <li style="font-family: 'Roboto Serif', serif;
+                        font-weight: 700;
+                        font-size: 37px;
+                        line-height: 48px;
+                        letter-spacing: 0;
+                        vertical-align: middle;
+                        color: #2F2F2F;
+                    ">No Extra Infrastructure or Staff Required</li>
+                    <li style="font-family: 'Roboto Serif', serif;
+                        font-weight: 700;
+                        font-size: 37px;
+                        line-height: 48px;
+                        letter-spacing: 0;
+                        vertical-align: middle;
+                        color: #2F2F2F;
+                    ">Enhances Your Clinical Outcomes</li>
+                    <li style="font-family: 'Roboto Serif', serif;
+                        font-weight: 700;
+                        font-size: 37px;
+                        line-height: 48px;
+                        letter-spacing: 0;
+                        vertical-align: middle;
+                        color: #2F2F2F;
+                    ">Boosts Patient Satisfaction & Trust</li>
+                </ul>
             </div>
         </div>
 
-        <span>
-            <p>Peace of Mind:</p>
-            <p>
-                <span id="section3-t1">Take Control of Your Clinic Data <br></span>
-                with International Standard AES-256 Encryption, stronger than a&nbsp;<span style="color: rgba(59, 50, 107, 1); font-weight: 500;">Bank Locker</span>
+        <span style="color: #2F2F2F;margin-top: 0;padding-top: 0;">
+            <p style="font-family: Roboto Flex;
+                font-weight: 300;
+                font-size: 28px;
+                line-height: 33px;
+                letter-spacing: 0%;
+                text-align: center;
+                vertical-align: middle;
+                ">
+                <!-- <span id="section3-t1">Take Control of Your Clinic Data </span> -->
+                We <span style="font-family: Roboto Flex;
+                    font-weight: 700;
+                    font-size: 28px;
+                    line-height: 33px;
+                    letter-spacing: 0%;
+                    text-align: center;
+                    vertical-align: middle;
+                ">integrate directly into your patient care workflow,</span><br> offering professional <span style="color: #3B326B;
+                    font-family: Roboto Flex;
+                    font-weight: 400;
+                    font-size: 28px;
+                    line-height: 33px;
+                    letter-spacing: 0%;
+                    text-align: center;
+                    vertical-align: middle;
+                ">mental health interventions</span> <br>
+                without disrupting your existing systems.
             </p>
         </span>
+
+        
+        <button class="brand-btn schedule-btn" style="padding: 10px 20px 10px 20px; 
+            gap: 14px;
+            font-family: Quicksand;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 100%;
+            letter-spacing: 0%;
+            text-align: center;
+            vertical-align: middle;
+            margin: 0 auto;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            padding: 13px 20px;
+            ">
+            Get Ekyamm for your Clinic
+            <img src="public/images/Arrow.svg" alt="">
+        </button>
 
     </section>
 
     <!-- 4th section -->
-    <section id="section4" class="prescription-section" style="background-color: rgba(239, 239, 239, 1);">
+    <!-- <section id="section4" class="prescription-section" style="background-color: rgba(239, 239, 239, 1);">
 
-        <!-- Image column -->
         <div class="image-column">
             <img src="public/images/Prescriptions.png" alt="Prescriptions">
         </div>
 
-        <!-- Text column -->
         <div class="hero-text-column">
             <p>Upload or Create</p>
             <h1>
@@ -1160,26 +1323,48 @@
             <button class="brand-btn schedule-btn" id="request-btn">
                 Request Invite
                 <img src="public/images/Arrow.svg" alt="">
-                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="20" height="26" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
-                </svg> -->
             </button>
         </div>
 
-    </section>
+    </section> -->
 
     <!-- 5th section -->
-    <section id="section5" class="prescription-section" style="background-color: rgba(240, 235, 232, 1);">
+    <section id="section5" class="prescription-section" style="background-color: rgba(240, 235, 232, 1);
+    margin: 0;
+    padding: 0;
+    ">
 
         <!-- Text column -->
-        <div class="hero-text-column">
+        <div class="hero-text-column" style="margin: 50px 0;padding-left: 7%;max-width: 850px;">
             <h1>
-                <span class="brand-text fontW-H1">Make it bigger!</span>
+                <span class="brand-text fontW-H1" style="font-family: Roboto Serif;
+                font-weight: 700;
+                font-size: 60px;
+                line-height: 68px;
+                letter-spacing: 0%;
+                ">Let’s Redefine Fertility Care with Mind-Body-Emotional Support
+                </span>
             </h1>
-            <p>Boost your Psychiatric Clinic Revenue by 2x to 6x
-                Join Ekyamm's Psychiatric Provider Network</p>
-            <button class="brand-btn schedule-btn" style="margin-top: 10px;">
-                Join Now
+            <br><br>
+            <p style="font-family: Roboto Flex;
+            font-weight: 300;
+            font-size: 30px;
+            line-height: 42px;
+            letter-spacing: 0%;
+            vertical-align: middle;
+            ">oin leading Infertility and Gynaec Centers in transforming patient care with Ekyamm’s mental health support platform to offer personalized emotional care that’s seamless, stigma-free, and supportive. </p>
+            <br><br>
+            <button class="brand-btn schedule-btn" style="margin-top: 10px;
+                padding: 13px 20px 13px 20px;
+                font-family: Quicksand;
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 100%;
+                letter-spacing: 0%;
+                text-align: center;
+                vertical-align: middle;
+                ">
+                Redefine Care Today !
                 <img src="public/images/Arrow.svg" alt="">
                 <!-- <svg xmlns="http://www.w3.org/2000/svg" width="20" height="26" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
@@ -1188,8 +1373,12 @@
         </div>
         
         <!-- Image column -->
-        <div class="image-column">
-            <img src="public/images/Blocks.png" alt="Your Image">
+        <div class="image-column" style="height: 100%;
+        display: flex;
+        position: relative;
+        margin-left: 0;
+        ">
+            <img src="public/images/doctor-with-white-coat.png" alt="Doctor with white coat" style="height: 100%; min-height: 100%;">
         </div>
 
     </section>
@@ -1201,9 +1390,9 @@
                 <a href="https://play.google.com/store/apps/details?id=com.ekyamm.app" target="_blank">
                     <img src="public/images/Play-store.png" alt="Play Store" class="logo">
                 </a>
-                <!-- <a href="https://apps.apple.com/in/app/ekyamm-mh-clinic-companion/id6450462268" target="_blank">
+                <a href="https://apps.apple.com/in/app/ekyamm-mh-clinic-companion/id6450462268" target="_blank">
                     <img src="public/images/App-store.png" alt="App Store" class="logo">
-                </a> -->
+                </a>
             </div>
         </section>
         <div id="copyright" align="center">Copyright © <span id="currentYear"></span>&nbsp;Radicle Minds India Private Limited. All rights reserved. | 
