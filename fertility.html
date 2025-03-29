@@ -20,7 +20,7 @@
 }
 
 /* Navbar styles */
-.navbar {
+.navbar-main {
     background-color: #ffffff; /* White background */
     padding: 20px 6% 20px 6%;
     /* padding-left: 6%; */
@@ -30,10 +30,17 @@
     /* height: 15%; */
     top: 0;
     z-index: 10;
-    display: flex;
-    justify-content: space-between;
+    /* display: flex; */
+    /* justify-content: space-between; */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
     align-items: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    /* vertical-align: middle; */
 }
 
 .nav-right {
@@ -610,7 +617,7 @@
         /* Responsive styles for smaller screens */
         @media (max-width: 767px) {
 
-            .navbar{
+            .navbar-main{
                 max-height: 65px;
             }
             .logo {
@@ -1068,6 +1075,71 @@
                 margin-top: 50px;
             }
         }
+        
+        /* NEW CODE FOR FERTILITY */
+
+        #menu-desktop{
+            display: flex;
+        }
+        #menu-mobile{
+            display: none;
+        }
+        
+        /* For Desktop View */
+        @media screen and (min-width: 1024px) {
+            .navbar-main {
+                padding: 20px 6% 20px 6%;
+            }
+        }
+
+        /* For Tablet View */
+        @media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+            .navbar-main {
+                padding: inherit;
+            }
+        }
+
+        /* For Mobile Portrait View */
+        @media screen and (max-device-width: 480px) and (orientation: portrait) {
+            .gfg-div {
+                width: 200px;
+                height: 200px;
+                background-color: red;
+                color: #fff;
+            }
+        }
+
+        /* For Mobile Landscape View */
+        @media screen and (max-device-width: 640px) and (orientation: landscape) {
+            .gfg-div {
+                width: 400px;
+                height: 200px;
+                background-color: cyan;
+                color: black;
+            }
+        }
+
+        /* For Mobile Phones Portrait or Landscape View */
+        @media screen and (max-device-width: 640px) {
+            #introSection1 {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+            .navbar-main {
+                padding: 0.15em 6% 0.5em 6%;
+                max-height: fit-content;
+            }
+            .menu li a{
+                font-size: 14px;
+            }
+            #menu-desktop{
+                display: none;
+            }
+            #menu-mobile{
+                display: flex;
+                padding: 0 6%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1075,24 +1147,32 @@
     <div id="overlay"></div>
 
     <!-- Navbar -->
-    <div class="navbar">
-        <!-- Company Logo (left align) -->
-        <img src="public/images/ekyamm-white.png" alt="Company Logo" class="logo ekyamm-logo">
+    <div class="navbar-main">
 
-        <!-- Right side container -->
-        <div class="nav-right">
-            <!-- Menu Options -->
-            <ul class="menu">
-                <li><a href="mh-practitioner.html">MH Practitioner</a></li>
-                <li class="active"><a href="fertility.html">Fertility</a></li>
-            </ul>
-
-            <!-- Buttons -->
-            <div class="buttons">
-                <button id="chatNow" class="brand-btn contact-button">Chat Now</button>
-                <button id="contactUs" class="brand-btn contact-button">Contact Us</button>
+        <div class="navbar">
+            <!-- Company Logo (left align) -->
+            <img src="public/images/ekyamm-white.png" alt="Company Logo" class="logo ekyamm-logo">
+    
+            <!-- Right side container -->
+            <div class="nav-right">
+                <!-- Menu Options -->
+                <ul id="menu-desktop" class="menu">
+                    <li><a href="mh-practitioner.html">MH Practitioner</a></li>
+                    <li class="active"><a href="fertility.html">Fertility</a></li>
+                </ul>
+    
+                <!-- Buttons -->
+                <div class="buttons">
+                    <button id="chatNow" class="brand-btn contact-button">Chat Now</button>
+                    <button id="contactUs" class="brand-btn contact-button">Contact Us</button>
+                </div>
             </div>
         </div>
+
+        <ul id="menu-mobile" class="menu">
+            <li><a href="mh-practitioner.html">MH Practitioner</a></li>
+            <li class="active"><a href="fertility.html">Fertility</a></li>
+        </ul>
     </div>
 
     <!-- <div id="carouselEkyammIndicators" class="carousel slide" style="z-index: 6;" data-ride="" data-interval="400">
