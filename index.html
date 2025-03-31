@@ -901,12 +901,12 @@
 
 
             .secure-section p{
-                margin-left: 30px;
+                /* margin-left: 30px; */
                 /* margin-right: 30px; */
                 /* background-color: yellow; */
             }
             .prescription-section{
-                flex-direction: column-reverse;
+                /* flex-direction: column-reverse; */
             }
             .prescription-section #request-btn {
                 margin-top: 13px;
@@ -1081,10 +1081,19 @@
 
         /* NEW CODE FOR FERTILITY */
 
+        #break-before-p-section-1, #break-before-start-now-button, .break-line{
+            display: block;
+        }
         #menu-desktop{
             display: flex;
         }
         #menu-mobile{
+            display: none;
+        }
+        .secure-section #heart-desktop{
+            display: block;
+        }
+        .secure-section #heart-mobile{
             display: none;
         }
         
@@ -1092,6 +1101,13 @@
         @media screen and (min-width: 1024px) {
             .navbar-main {
                 padding: 20px 6% 20px 6%;
+            }
+            #section5 .image-column{
+                /* width: 30vw; */
+                justify-content: end;
+            }
+            #section5 .image-column img{
+                width: 35vw;
             }
         }
 
@@ -1150,13 +1166,35 @@
             .hero-section .image-column, .hero-section .hero-text-column{
                 width: 100%;
             }
-            #introSection1 .hero-text-column h1{
+            #introSection1 .hero-text-column h1, #section5 .hero-text-column h1{
                 /* font-size: 33px !important; */
                 font-size: 2em !important;
+                line-height: 35px !important;
             }
-            #introSection1 .hero-text-column p{
+            #introSection1 .hero-text-column p, #section5 .hero-text-column p, #secure-section-part1 #heart-plus-text ul li{
                 /* font-size: 24px !important; */
                 font-size: 1.5em !important;
+                line-height: 35px !important;
+            }
+            .secure-section span p{
+                font-size: 24px !important;
+            }
+            .secure-section{
+                max-width: 100%;
+                padding: 10px !important;
+            }
+            #secure-section-part1{
+                display: flex;
+                flex-direction: column;
+            }
+            .secure-section .schedule-btn{
+                margin: 1.5em auto !important;
+            }
+            .secure-section #heart-desktop{
+                display: none;
+            }
+            .secure-section #heart-mobile{
+                display: block;
             }
             #introSection1, #introSection1 .hero-text-column{
                 /* margin: 0 !important; */
@@ -1173,12 +1211,21 @@
                 top: 0.5em;
                 /* background-color: wheat; */
             }
-            #break-before-p-section-1, #break-before-start-now-button{
+            #section5 .hero-text-column{
+                padding: 0 !important;
+                margin: 1em !important;
+            }
+            #break-before-p-section-1, #break-before-start-now-button, .break-line{
                 display: none;
             }
-            #introSection1 .hero-text-column #schedule-demo{
+            #introSection1 .hero-text-column #schedule-demo, #section5 .hero-text-column .schedule-btn, .secure-section .schedule-btn{
                 font-size: 15px !important;
                 padding: 7px 10px !important;
+            }
+            #section5 .hero-text-column .schedule-btn{
+                margin: 0 auto;
+                position: relative;
+                right: 1em;
             }
         }
     </style>
@@ -1334,7 +1381,8 @@
         <div id="secure-section-part1">
             <!-- Image column -->
             <div id="heart-plus-container">
-                <img width="350" src="public/images/heart-plus.png" alt="Heart Plus">
+                <img width="350" id="heart-desktop" src="public/images/heart-plus.png" alt="Heart Plus">
+                <img width="250" id="heart-mobile" src="public/images/heart-plus-mobile.png" alt="Heart Plus">
             </div>
     
             <!-- Text column -->
@@ -1393,7 +1441,7 @@
                     letter-spacing: 0%;
                     text-align: center;
                     vertical-align: middle;
-                ">integrate directly into your patient care workflow,</span><br> offering professional <span style="color: #3B326B;
+                ">integrate directly into your patient care workflow,</span><br class="break-line"> offering professional <span style="color: #3B326B;
                     font-family: Roboto Flex;
                     font-weight: 400;
                     font-size: 28px;
@@ -1405,7 +1453,6 @@
                 without disrupting your existing systems.
             </p>
         </span>
-
         
         <button class="brand-btn schedule-btn" style="padding: 10px 20px 10px 20px; 
             gap: 14px;
@@ -1460,12 +1507,11 @@
                 <span id="section-5-brand-text" class="brand-text fontW-H1" style="font-family: Roboto Serif;
                 font-weight: 700;
                 font-size: 60px;
-                line-height: 68px;
                 letter-spacing: 0%;
                 ">Let’s Redefine Fertility Care with Mind-Body-Emotional Support
                 </span>
             </h1>
-            <br><br>
+            <br class="break-line"><br class="break-line">
             <p style="font-family: Roboto Flex;
             font-weight: 300;
             font-size: 30px;
@@ -1473,7 +1519,7 @@
             letter-spacing: 0%;
             vertical-align: middle;
             ">Join leading Infertility and Gynaec Centers in transforming patient care with Ekyamm’s mental health support platform to offer personalized emotional care that’s seamless, stigma-free, and supportive. </p>
-            <br><br>
+            <br class="break-line"><br class="break-line">
             <button class="brand-btn schedule-btn" style="margin-top: 10px;
                 padding: 13px 20px 13px 20px;
                 font-family: Quicksand;
@@ -1496,9 +1542,9 @@
         <div class="image-column" style="height: 100%;
         display: flex;
         position: relative;
-        margin-left: 0;
         ">
-            <img src="public/images/doctor-with-white-coat.png" alt="Doctor with white coat" style="height: 100%; min-height: 100%;">
+            <!-- <img src="public/images/doctor-with-white-coat.png" alt="Doctor with white coat" style="height: 100%; min-height: 100%;"> -->
+            <img src="public/images/doctor-with-his-arms-crossed.png" alt="Doctor with arms crossed" style="height: 100%; min-height: 100%;">
         </div>
 
     </section>
