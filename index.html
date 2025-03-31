@@ -229,7 +229,7 @@
         .image-column, .image-column2 {
             flex-shrink: 0; /* Prevent image from shrinking */
             margin-left: 20px;
-            width: 50vw;
+            width: 55vw;
         }
         .image-column img, .image-column2 img{
             /* width: 550px; */
@@ -252,9 +252,10 @@
             display: flex;
             align-items: flex-end; /* Align content to the bottom */
             justify-content: space-between;
-            height: 100vh; /* Ensures full viewport height */
+            height: 80vh; /* Ensures full viewport height */
             position: relative;
             padding-bottom: 20px; 
+            /* max-height: max-content; */
         }
 
         .hero-section .image-column {
@@ -393,7 +394,7 @@
             z-index: 5;
             margin-left: 5px;
         }
-        #PSYSharkTankWinner svg, .hero-section svg, .hero-section svg:nth-child(1){
+        #PSYSharkTankWinner svg, .hero-section svg{ /* , .hero-section svg:nth-child(1) */
             position: absolute;
             left: 0;
             z-index: 3;
@@ -704,7 +705,7 @@
                 /* padding-bottom: 40px; */
             }
             #introSection1 .image-column img{
-                padding-bottom: 16% !important;
+                /* padding-bottom: 16%; */
                 /* padding-bottom: 27px; */
             }
             #PSYSharkTankWinner #winnerMobile img{
@@ -1141,6 +1142,44 @@
                 display: flex;
                 padding: 0 6%;
             }
+            .hero-section{
+                display: flex;
+                flex-direction: column-reverse;
+                /* margin-top: 0; */
+            }
+            .hero-section .image-column, .hero-section .hero-text-column{
+                width: 100%;
+            }
+            #introSection1 .hero-text-column h1{
+                /* font-size: 33px !important; */
+                font-size: 2em !important;
+            }
+            #introSection1 .hero-text-column p{
+                /* font-size: 24px !important; */
+                font-size: 1.5em !important;
+            }
+            #introSection1, #introSection1 .hero-text-column{
+                /* margin: 0 !important; */
+            }
+            #introSection1{
+                /* align-items: flex-start; */
+                /* background-color: chartreuse; */
+            }
+            #introSection1 .hero-text-column{
+                justify-content: flex-start;
+                margin: 0;
+                padding: 0 0.5em;
+                position: absolute;
+                top: 0.5em;
+                /* background-color: wheat; */
+            }
+            #break-before-p-section-1, #break-before-start-now-button{
+                display: none;
+            }
+            #introSection1 .hero-text-column #schedule-demo{
+                font-size: 15px !important;
+                padding: 7px 10px !important;
+            }
         }
     </style>
 </head>
@@ -1222,7 +1261,7 @@
         </div>
       </div> -->
 
-    <section id="introSection1" class="hero-section">
+    <section id="introSection1" class="hero-section" style="margin-top: 3em;">
         <div class="image-column">
             <img src="public/images/patient-doctor.png" alt="Patient Doctor">
         </div> 
@@ -1231,11 +1270,11 @@
             <h1 style="padding-top: 50px;">
                 Enhance Your Patient Care with Mind-Body-Emotional Balance
             </h1>
-            <br>
+            <br id="break-before-p-section-1">
             <p>
                 Ekyamm empowers your treatment plans by seamlessly integrating emotional well-being support into the treatment journey.
             </p>
-            <br>
+            <br id="break-before-start-now-button">
             <button id="schedule-demo" class="brand-btn schedule-btn" style="padding: 10px 20px 12px 20px; 
                 gap: 14px;
                 font-family: Quicksand;
@@ -1517,11 +1556,15 @@
     <script type="text/javascript">
         // jQuery("#responsive_headline").fitText();
         // jQuery(".hero-text-column").fitText(0.8);
+        $(".hero-text-column h1").fitText(1, {
+            minFontSize: '28px',
+            maxFontSize: '60px'
+        });
         $("#section-5-brand-text").fitText(1, {
             minFontSize: '28px',
             maxFontSize: '60px'
         });
-        $(".hero-text-column p").fitText(1, {
+        $(".hero-text-column p").fitText(1.2, {
             minFontSize: '14px',
             maxFontSize: '30px'
         });
