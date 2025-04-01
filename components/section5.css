@@ -7,12 +7,17 @@
     /* height: 30rem; */
 }
 
+.section5-h1{
+    font-family: 'Roboto Serif';
+    color: #3B326B;
+}
+
 
 @media (max-width: 480px) {
     /* Mobile styles */
     
     .custom-img{
-        transform: translateX(15%);
+        transform: translateX(-30%);
         position: inherit;
         right: 0;
         max-width: 80vw;
