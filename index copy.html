@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" href="public/images/logo-circle-hands.svg" type="image/png">
+    <title>Ekyamm</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,500;8..144,600&family=Quicksand:wght@500;700&family=Roboto+Serif:opsz,wght@8..144,600;8..144,700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(to bottom, rgba(176, 164, 245, 0.9) , rgba(237, 161, 151, 0.9));
+    
+            /* To disable pinch zoom gestures and and double-tap to zoom on iOS */
+            touch-action: pan-x pan-y;
+}
+
+/* Navbar styles */
+.navbar-main {
+    background-color: #ffffff; /* White background */
+    padding: 20px 6% 20px 6%;
+    /* padding-left: 6%; */
+    /* padding-right: 6%; */
+    position: fixed;
+    width: 100%;
+    /* height: 15%; */
+    top: 0;
+    z-index: 10;
+    /* display: flex; */
+    /* justify-content: space-between; */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    /* vertical-align: middle; */
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin-right: 35px; /* Spacing between menu options */
+    font-family: 'Roboto Flex';
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: inherit; /* or a specific color */
+    font-size: 16px; /* Adjust as needed */
+}
+
+/* Highlight the active menu item */
+.menu li.active a {
+    font-weight: 700;
+    color: #776EA5;
+}
+
+/* Logo styles */
+.logo {
+    /* height: 45px; */
+    max-width: 250px;
+    cursor: pointer;
+}
+
+.brand-btn{
+    background-color: #776EA5; 
+    color: #ffffff; 
+    border: none;
+    padding: 10px;
+    border-radius: 11px;
+    cursor: pointer;
+    font-family: 'Quicksand';
+    font-weight: 500;
+}
+
+/* Contact button styles */
+.contact-button {
+    /* padding: 8px 16px; */
+    font-size: 14px;
+    position: relative;
+    /* right: 10%; */
+}
+
+/* Media query for screens with a maximum width of 767px (typical mobile devices) */
+/* @media (max-width: 767px) {
+    .navbar{
+        max-height: 65px;
+    }
+    .logo {
+        max-width: 112px;
+    }
+    .contact-button{
+        font-size: 9px;
+        height: 24px;
+        align-items: center;
+        display: flex;
+        border-radius: 6px;
+    }
+    #know-more{
+        display: none;
+    }
+    #store-img-section{
+        position: relative;
+        bottom: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    #store-img-section #know-more{
+        display: block;
+        padding-right: 5px;
+    }
+} */
+
+        /* Hero section styles */
+        .hero-section, .knowMore-section, .prescription-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            /* padding: 30px 90px; */
+            padding: 50px 30px;
+            /* Transparent background */
+            background-color: rgba(255, 255, 255, 0.048); 
+            margin-top: 35px;
+        }
+
+        .carousel-item {
+            /* height: 75%; */
+            height: 800px;
+            max-height: fit-content;
+        }
+
+        .knowMore-section{
+            margin-top: 0;
+            padding-top: 25px;
+            background-color: rgba(217, 217, 217, 1);
+        }
+        .secure-section, .prescription-section{
+            margin-top: 0;
+        }
+        #know-more{
+            font-family: 'Quicksand';
+            font-weight: 700;
+            font-size: 42px;
+            color: rgba(20, 20, 20, 1);
+            margin-top: 15px;
+        }
+        #store-img-section #know-more{
+            display: none;
+        }
+        .prescription-section{
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        /* Text column styles */
+        .hero-text-column {
+            width: 50vw;
+            max-width: 670px;
+            margin: 25px;
+        }
+        .knowMore-section .hero-text-column {
+            margin-left: 81px;
+        }
+        .hero-text-column h1{
+            font-size: 60px;
+            font-family: 'Quicksand';
+            font-weight: 700;
+            /* color: rgba(0, 0, 0, 1); */
+            color: #000000;
+        }
+        .form-container h1{
+            font-size: 60px;
+            font-family: 'Roboto Serif';
+            /* color: rgba(0, 0, 0, 1); */
+            color: rgba(47, 47, 47, 1);
+        }
+        .fontW-H1{
+            font-weight: 700;
+        }
+        .knowMore-section .hero-text-column p{
+            margin-bottom: 0.5rem;
+        }
+        .knowMore-section .hero-text-column h1, .secure-section .hero-text-column h1{
+            color: rgba(47, 47, 47, 1);
+            font-weight: 700;
+        }
+        .knowMore-section .hero-text-column img{
+            width: 110px;
+        }
+        .hero-text-column p{
+            font-family: 'Roboto Flex';
+            font-size: 30px;
+            line-height: 35px;
+            color: rgba(47, 47, 47, 1);
+            font-weight: 300;
+        }
+        .brand-text{
+            color: rgba(59, 50, 107, 1);
+        }
+        .brand-text-bold{
+            font-weight: 600;
+        }
+
+        /* Image column styles */
+        .image-column, .image-column2 {
+            flex-shrink: 0; /* Prevent image from shrinking */
+            margin-left: 20px;
+            width: 55vw;
+        }
+        .image-column img, .image-column2 img{
+            /* width: 550px; */
+            width: 100%;
+        }
+
+        /* .hero-section .image-column{
+            display: flex;
+            align-items: flex-end !important; 
+            justify-content: center;
+            height: 100% !important; 
+        }
+        .hero-section .image-column img{
+            position: absolute !important;
+            width: inherit;
+            bottom: -16.8% !important;
+        } */
+
+        .hero-section {
+            display: flex;
+            align-items: flex-end; /* Align content to the bottom */
+            justify-content: space-between;
+            height: 80vh; /* Ensures full viewport height */
+            position: relative;
+            padding-bottom: 20px; 
+            /* max-height: max-content; */
+        }
+
+        .hero-section .image-column {
+            /* transform: translateX(-90%); */
+            /* width: 100%; */
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-section .image-column img {
+            position: absolute;
+            bottom: 0;
+            /* left: 50%; */
+            max-width: 100%;
+            height: auto;
+            width: inherit;
+        }
+
+
+        #PSYSharkTankWinner{
+            display: flex;
+            align-items: center;
+            margin-top: 30px;
+            margin-top: 0px;
+            padding-top: 0 !important;
+            padding-right: 40vw;
+        }
+        #PSYSharkTankWinner .image-column{
+            /* width: 50vw; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-left: auto;
+            /* background-color: tomato; */
+            /* width: 50%; */
+        }
+        #PSYSharkTankWinner #schedule-demo2{
+            width: inherit;
+            color: #EDA197;
+            /* Transparent background */
+            background-color: rgba(255, 255, 255, 0.048) !important;  
+            border: 2px solid #EDA197;
+            padding: 10px;
+            border-radius: 14px;
+            cursor: pointer;
+            font-family: 'Quicksand';
+            font-weight: 500;
+        }
+        #PSYSharkTankWinner #schedule-demo2 img{
+            width: inherit;
+
+        }
+        #winnerMobile{
+            /* background-color: yellow; */
+            /* padding: 0 60px; */
+            width: auto;
+            width: min-content;
+        }
+        .section1-leftcol{
+            width: 85%;
+        }
+        .section1-leftcol img{
+            width: 55rem;
+        }
+        #carousel1{
+            background: linear-gradient(107.97deg, #7B7194 0%, #51476E 76.05%);
+        }
+        #winnerImg div{
+            display: flex;
+        }
+        #winnerImg #conference-section{
+            align-items: center;
+        }
+        #winnerImg #conference-section p{
+            margin-left: 0 !important;  
+            color: #5C5C5C;
+        }
+        #winnerImg div #psychiatric-association-logo{
+            width: 120px;
+            height: 85px;
+        }
+        #winnerMobile img{
+            width: 788px;
+            position: relative;
+            left: 200px;
+            bottom: -24px;
+        }
+        #PSYSharkTankWinner #winnerImg{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: end;
+            width: fit-content;
+            padding-top: 50px;
+        }
+        #PSYSharkTankWinner #winnerImg p{
+            font-family: 'Roboto Flex';
+            font-size: 30px;
+            font-weight: 500;
+            line-height: 35px;
+            letter-spacing: 0em;
+            text-align: center;
+
+            /* font-family: 'Quicksand';
+            font-size: 25px; */
+            margin: 30px;
+            margin-right: 0;
+            width: 40vw;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        #PSYSharkTankWinner #winnerImg #winnerLogo{
+            width: 45%;
+        }
+        #PSYSharkTankWinner .image-column:nth-child(2) img{
+            width: 40%;
+        }
+        #sharkTankWinner-section img{
+            padding-left: 1rem;
+            margin-right: 2.5rem;
+        }
+        /* #PSYSharkTankWinner .image-column:nth-child(1){
+            width: 48%;
+            height: 70vh;
+        }
+        #PSYSharkTankWinner .image-column:nth-child(2){
+            width: 51.5vh;
+        }
+        #PSYSharkTankWinner .image-column:nth-child(2) img{
+            position: relative;
+            bottom: 50px;
+            z-index: 5;
+        } */
+        .hero-section .image-column, .hero-text-column{
+            z-index: 5;
+            margin-left: 5px;
+        }
+        #PSYSharkTankWinner svg, .hero-section svg{ /* , .hero-section svg:nth-child(1) */
+            position: absolute;
+            left: 0;
+            z-index: 3;
+            /* bottom: -130px; */
+            /* bottom: -1px; */
+
+            /* Now Fixed */
+            bottom: -90px; 
+            /* New */
+            /* bottom: -120px; */
+        }
+        #introSection1{
+            /* margin-top: 88px; */
+            margin-top: -40px;
+            padding-top: 40px;
+            padding-bottom: 70px;
+            justify-content: center;
+            align-items: center;
+        }
+        .carousel-item.active #introSection1 {
+            /* padding-bottom: 70px; */
+            background-clip: padding-box;
+        }
+        /* #PSYSharkTankWinner .svgs svg:nth-child(1){
+            display: block;
+        } */
+        #PSYSharkTankWinner .svgs img, #introSection1 .svgs img{
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            /* bottom: 99px; */
+        }
+        #PSYSharkTankWinner .svgs svg:nth-child(2), .hero-section .svgs svg:nth-child(2){
+            display: none;
+            /* z-index: -1;
+            bottom: -100%; */
+        }
+        #PSYSharkTankWinner .svgs span, .hero-section .svgs span{
+            display: none;
+            /* z-index: -1; */
+        }
+        /* .section1-leftcol{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        } */
+        /* .knowMore-section{
+            z-index: 4;
+        } */
+        .schedule-btn{
+            padding: 4px 10px;
+            font-size: 24px;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+        .schedule-btn img{
+            margin-left: 7px;
+        }
+
+        #secure-section-part1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* background-color: aqua; */
+            /* margin-bottom: 20px; */
+        }
+        .secure-section .image-column{
+            width: 30%;
+            /* background-color: chartreuse; */
+        }
+
+        .secure-section .hero-text-column{
+            width: 30%;
+            /* background-color: blueviolet; */
+        }
+
+        .secure-section{
+            /* background-color: rgba(255, 255, 255, 0.048); */
+            background-color: #E4B4AE;
+            padding: 50px;
+            padding-top: 35px;
+            padding-bottom: 35px;
+            /* align-items: center;
+            justify-content: center; */
+        }
+        .secure-section p{
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            width: min-content;
+            width: 38%;
+            /* width: 50%; */
+            font-family: 'Roboto Flex';
+            font-size: 28px;
+            line-height: 33px;
+            margin-bottom: 0;
+            font-weight: 300;
+        }
+        #section4 .image-column img{
+            width: 70%;
+        }
+        .prescription-section p{
+            margin-bottom: 5px;
+        }
+        .prescription-section #request-btn{
+            margin-top: 25px;
+        }
+        footer section{
+            display: flex;
+            /* flex-direction: row; */
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 6%;
+            padding-bottom: 12px;
+        }
+        footer #store img{
+            height: 41px !important;
+        }
+        a{
+            text-decoration: none !important;
+        }
+        footer #copyright{
+            font-family: 'Roboto Flex';
+            color: rgba(109, 106, 93, 1);
+            /* font-size: 30px; */
+            font-size: 18px;
+            font-weight: 300;
+            padding: 0 17px 20px 17px;
+        }
+
+        #chatNow{
+            display: none;
+        }
+        #contactUs{
+            display: block;
+        }
+
+        #section3-t1{
+            /* color: rgba(20, 20, 20, 1); */
+            color: rgba(47, 47, 47, 1); 
+            font-weight: 500;
+            font-family: 'Quicksand';
+            font-weight: 700;
+            font-size: 42px;
+            font-size: 30px;
+        }
+        #know-more{
+            /* font-size: 13px; */
+            font-family: 'Roboto Flex';
+            font-size: 28px;
+            color: rgba(47, 47, 47, 1);
+            font-weight: 500;
+        }
+
+        /* Responsive styles for tablets */
+        @media (min-width: 768px) and (max-width: 991px) {
+            /* .hero-text-column h1{
+                font-size: 42px; // TESTING
+            } */
+            /* .hero-text-column p{
+                font-size: 21px; // TESTING
+            } */
+            .schedule-btn{
+                font-size: 19px;
+                border-radius: 16px;
+            }
+            #PSYSharkTankWinner {
+                flex-direction: column; /* Stack columns on small screens */
+                text-align: center; /* Center-align text on small screens */
+                padding: 0;
+            }
+            
+            #PSYSharkTankWinner .image-column:nth-child(1) {
+                width: 60%;
+                height: 48vh;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 50px;
+            }
+            #PSYSharkTankWinner .image-column:nth-child(2){
+                width: 85%;
+                /* background-color: tomato; */
+            }
+            #PSYSharkTankWinner .image-column:nth-child(2) img {
+                margin-top: 135px;
+                margin-top: 26%;
+                padding-top: 30px;
+                width: 40%;
+                /* background-color: yellow; */
+            }
+            #PSYSharkTankWinner .svgs svg:nth-child(1){
+                display: block;
+            }
+            /* #PSYSharkTankWinner .svgs svg:nth-child(2), #PSYSharkTankWinner .svgs svg:nth-child(2) svg{
+                display: block;
+            } */
+            #PSYSharkTankWinner .svgs svg:nth-child(2), .hero-section .svgs svg:nth-child(2){
+                display: none;
+            }
+            #PSYSharkTankWinner .svgs span, .hero-section .svgs span{
+                display: none;
+            }
+
+
+            /* #know-more{
+                font-size: 13px;
+            } */
+            .knowMore-section .hero-text-column img{
+                width: 50px;
+            }
+            .secure-section p{
+                /* margin-left: 30px; */
+                width: 70%;
+            }
+            footer #copyright{
+                /* font-size: 19px; */
+                font-size: 9px;
+            }
+        }
+
+        /* Responsive styles for smaller screens */
+        @media (max-width: 767px) {
+
+            .navbar-main{
+                max-height: 65px;
+            }
+            .logo {
+                max-width: 112px;
+            }
+            .contact-button{
+                font-size: 9px;
+                height: 24px;
+                align-items: center;
+                display: flex;
+                border-radius: 6px;
+            }
+            #know-more{
+                display: none;
+            }
+            #store-img-section{
+                position: relative;
+                bottom: 4px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 15px;
+                /* background-color: aqua; */
+            }
+            #store-img-section #know-more{
+                display: block;
+                padding-right: 5px;
+                margin-top: 0;
+            }
+            
+            .fontW-H1{
+                font-weight: 600;
+            }
+            .hero-section{
+                margin-top: 60px;
+            }
+            .hero-section, .knowMore-section, .prescription-section, #PSYSharkTankWinner {
+                flex-direction: column; /* Stack columns on small screens */
+                text-align: center; /* Center-align text on small screens */
+                padding: 0;
+            }
+
+            .image-column {
+                margin-left: 0; /* Remove margin for image on small screens */
+                margin-top: 20px; /* Add space between text and image on small screens */
+            }
+
+            .knowMore-section .hero-text-column{
+                margin: 20px 90px;
+            }
+
+            .hero-text-column {
+                width: 80vw;
+                margin: 25px;
+            }
+            #introSection1 .image-column{
+                margin-left: 0 !important;
+            }
+            
+            /* .hero-text-column h1{
+                font-size: 28px; // TESTING
+                line-height: 30px;
+            }
+            .hero-text-column p{
+                font-size: 14px; // TESTING
+                line-height: 16px;
+            } */
+            .schedule-btn{
+                font-size: 15px;
+                border-radius: 16px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .schedule-btn img{
+                margin-left: 4px;
+                height: 10px;
+            }
+            .image-column{
+                width: max-content;
+            }
+            .image-column img{
+                width: 80vw;
+                /* padding-bottom: 40px; */
+            }
+            #introSection1 .image-column img{
+                /* padding-bottom: 16%; */
+                /* padding-bottom: 27px; */
+            }
+            #PSYSharkTankWinner #winnerMobile img{
+                padding-bottom: 10.5% !important;
+                /* padding-bottom: 27px; */
+            }
+
+            .carousel-item {
+                height: 600px;
+                max-height: fit-content;
+            }
+
+            #PSYSharkTankWinner{
+                display: flex;
+                flex-direction: column-reverse;
+                align-items: center;
+                margin-top: 30px;
+                margin-top: 0px;
+                padding-top: 0 !important;
+                /* padding-right: 40vw; */
+            }
+            #PSYSharkTankWinner #schedule-demo2{ /* Button */
+                font-size: 15px;
+                border-radius: 16px;
+                padding: 4px 10px;
+                margin-left: auto;
+                margin-right: auto;
+                width: fit-content;
+            }
+            #PSYSharkTankWinner #schedule-demo2 img{
+                width: min-content !important;
+                margin-left: 4px;
+                height: 10px;
+            }
+            .section1-leftcol{
+                width: 100vw;
+                /* padding-top: 1rem; */
+            }
+            #PSYSharkTankWinner #winnerImg {
+                width: 100%;
+                /* height: 26vh; */
+                /* margin-left: auto; */
+                margin-top: 20px;
+                /* display: flex;
+                align-items: center;
+                justify-content: center; */
+            }
+            #PSYSharkTankWinner #winnerImg img{
+                width: 100%;
+                padding-bottom: 0;
+                /* background-color: tomato; */
+            } 
+            #PSYSharkTankWinner #winnerImg #winnerLogo{
+                /* width: 83%; */
+                width: 43%;
+            }
+            #winnerMobile{
+                margin-top: 0px !important;
+                /* height: 323.5px; */
+                height: auto;
+            }
+            #winnerMobile img{
+                width: 88vw;
+                position: relative;
+                left: -23px;
+                bottom: -38px;
+                bottom: -2vh;
+            }
+            #PSYSharkTankWinner #winnerImg p{
+                font-family: 'Roboto Flex';
+                font-size: 12px;
+                font-weight: 500;
+                line-height: 14px;
+                letter-spacing: 0em;
+                text-align: center;
+                width: 100%;
+                margin: 15px;
+            }
+            #PSYSharkTankWinner .image-column:nth-child(2){
+                width: 100%;
+                /* background-color: yellow; */
+            }
+            #PSYSharkTankWinner .image-column:nth-child(2) img {
+                width: 35%;
+                padding-bottom: 0;
+            }
+            #PSYSharkTankWinner .svgs svg:nth-child(1) svg, .hero-section .svgs svg:nth-child(1){
+                /* z-index: -1; */
+                display: none;
+                /* position: absolute;
+                bottom: 20px; */
+            }
+            /* #PSYSharkTankWinner .svgs svg:nth-child(2), #PSYSharkTankWinner .svgs svg:nth-child(2) svg{
+                display: block;
+            } */
+            #PSYSharkTankWinner .svgs svg:nth-child(2), .hero-section .svgs svg:nth-child(2), #introSection1 .svgs svg:nth-child(2){
+                display: block;
+                z-index: 2;
+                position: absolute;
+                bottom: 20%;
+                width: 100%;
+                left: 0;
+            }
+            /* #introSection1 #wave2{
+                display: block !important;
+                position: absolute;
+                z-index: 5;
+            } */
+            #PSYSharkTankWinner .svgs span, .hero-section .svgs span{
+                display: block;
+                position: absolute;
+                display: flex;
+                z-index: 2;
+                height: 30%;
+                width: 100%;
+                background-color: #D9D9D9;
+                bottom: -26px;
+                left: 0;
+            }
+            #winnerImg #conference-section p{
+                margin-right: 3px !important;  
+            }
+            #winnerImg div #psychiatric-association-logo{
+                width: 55px;
+                height: 35px;
+            }
+            #sharkTankWinner-section img{
+                margin-left: 0.5rem;
+                padding-left: 0.7rem;
+                margin-right: 0.7rem;
+            }
+
+            #introSection1 {
+                /* margin-top: 85px; */
+                margin-top: 65px;
+                padding-top: 20px;
+            }
+
+            #know-more{
+                /* font-size: 24px; */
+                font-size: 14px;
+            }
+            .knowMore-section .hero-text-column img{
+                width: 71px;
+            }
+
+            .secure-section{
+                padding-left: 20px;
+                padding-top: 30px;
+                padding-bottom: 30px;
+            }
+            .secure-section p{
+                width: 98%;
+                font-size: 14px;
+                line-height: 16px;
+                /* background-color: brown; */
+            }
+            #section3-t1 {
+                font-size: 16px;
+                line-height: 16px;
+            }
+            .secure-section .hero-text-column{
+                margin-left: 5px;
+            }
+            .secure-section .hero-text-column h1 {
+                font-size: 22px;
+                line-height: 22px;
+            }
+            .image-column2{
+                margin-left: 0 !important;
+            }
+            /* #secure-section-part1 #heart-plus-container{
+                width: 20vw;
+            }
+            #secure-section-part1 #heart-plus-container img{
+                width: 20px !important;
+            }
+            #secure-section-part1 .image-column2 img {
+                width: 27vw;
+                padding-bottom: 22px;
+            }
+            #secure-section-part1 {
+                margin-bottom: 10px;
+            }
+            .bullet-ui{
+                font-family: 'Roboto Serif';
+                font-weight: 700 !important;
+                font-size: 37px !important;
+                line-height: 48px !important;
+                letter-spacing: 0%;
+                vertical-align: middle;
+            } */
+
+
+            .secure-section p{
+                /* margin-left: 30px; */
+                /* margin-right: 30px; */
+                /* background-color: yellow; */
+            }
+            .prescription-section{
+                /* flex-direction: column-reverse; */
+            }
+            .prescription-section #request-btn {
+                margin-top: 13px;
+                margin-bottom: 15px;
+            }
+            .prescription-section .image-column{
+                margin-top: 0;
+            }
+            #section4 .image-column{
+                width: 100vw;
+            }
+            #section4 .image-column img{
+                width: 55%;
+            }
+            .prescription-section .image-column img{
+                padding-bottom: 0;
+            }
+            .prescription-section .hero-text-column{
+                margin-bottom: 5px;
+                margin-bottom: -13px;
+            }
+            #section5 .hero-text-column{
+                margin-top: 1px;
+            }
+            .prescription-section .hero-text-column p, .prescription-section .hero-text-column h1{
+                margin-bottom: 0 !important;
+            }
+            .prescription-section .hero-text-column p{
+                margin-top: 3px;
+            }
+            #section5{
+                padding-bottom: 35px;
+            }
+            #section5 .hero-text-column h1{
+                padding-bottom: 10px;
+            }
+            
+            footer section{
+                padding: 20px 6%;
+            }
+            footer #store img{
+                height: 17px !important;
+            }
+            footer #copyright{
+                /* font-size: 14px; */
+                font-size: 7px;
+                padding-bottom: 17px;
+            }
+
+            #chatNow{
+                display: flex;
+                font-size: 12px;
+            }
+            #contactUs{
+                display: none;
+            }
+        }
+
+        /* The popup form - hidden by default */
+        .form-popup {
+            overflow-y: scroll;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+
+            font-family: 'Roboto Flex';
+            display: none;
+            position: fixed;
+            /* top: 70px;
+            right: 15px;
+            border: 3px solid #f1f1f1;
+            z-index: 99; */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 12;
+            background-color: #EFEDFD;
+            padding: 30px;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            width: max-content;
+            height: min-content;
+        }
+        /* Add styles to the form container */
+        .form-container {
+            max-width: 530px;
+            padding: 10px;
+            padding-left: 50px;
+            padding-right: 50px;
+            background-color: #EFEDFD;
+            display: flex;
+            flex-direction: column;
+        }
+        #close-contactForm{
+            position: relative;
+            left: 10px;
+            bottom: 10px;
+            cursor: pointer;
+        }
+        .form-container h1{
+            font-size: 40px;
+            font-family: 'Roboto Serif';
+            color: #776EA5;
+            font-weight: 600;
+        }
+        .form-container .btn{
+            font-family: 'Roboto Flex';
+            font-size: 17px;
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            background-color: #776EA5;
+            color: #FFFFFF;
+            padding: 16px;
+            border-radius: 8px;
+        }
+        .form-container label{
+            font-family: 'Roboto Flex';
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 15px;
+            letter-spacing: 0.5px;
+            color: rgba(109, 106, 93, 1);
+        }
+        .form-container input, .form-container textarea{
+            font-family: 'Roboto Flex';
+            padding: 16px;
+            border: 1px solid #fff;
+            outline: none;
+            border-radius: 8px;
+            letter-spacing: 0.5px;
+        }
+        .form-container input::placeholder, .form-container textarea::placeholder{
+            font-family: 'Roboto Flex';
+            font-size: 16px;
+            font-weight: 400;
+            color: #666666;
+        }
+        .form-container input:focus, .form-container textarea:focus{
+            border: 1px solid #776EA5;
+        }
+        #form-footer, #form-footer a{
+            font-family: 'Roboto Flex';
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 18px;
+            letter-spacing: 0em;
+            text-align: center;
+            text-decoration: none;
+            color: #666666;
+        }
+
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 11;
+        }
+
+        /* Responsive styles for tablets */
+        @media (min-width: 991px) {
+            .hero-section {
+                /* height: calc(100vh + 35px); */
+                /* margin-top: 100px; */
+                margin-top: 50px;
+            }
+        }
+
+        /* NEW CODE FOR FERTILITY */
+
+        #break-before-p-section-1, #break-before-start-now-button, .break-line{
+            display: block;
+        }
+        #menu-desktop{
+            display: flex;
+        }
+        #menu-mobile{
+            display: none;
+        }
+        .secure-section #heart-desktop{
+            display: block;
+        }
+        .secure-section #heart-mobile{
+            display: none;
+        }
+        
+        /* For Desktop View */
+        @media screen and (min-width: 1024px) {
+            .navbar-main {
+                padding: 20px 6% 20px 6%;
+            }
+            #section5 .image-column{
+                /* width: 30vw; */
+                justify-content: end;
+            }
+            #section5 .image-column img{
+                width: 35vw;
+            }
+        }
+
+        /* For Tablet View */
+        @media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+            .navbar-main {
+                padding: inherit;
+            }
+        }
+
+        /* For Mobile Portrait View */
+        @media screen and (max-device-width: 480px) and (orientation: portrait) {
+            .gfg-div {
+                width: 200px;
+                height: 200px;
+                background-color: red;
+                color: #fff;
+            }
+        }
+
+        /* For Mobile Landscape View */
+        @media screen and (max-device-width: 640px) and (orientation: landscape) {
+            .gfg-div {
+                width: 400px;
+                height: 200px;
+                background-color: cyan;
+                color: black;
+            }
+        }
+
+        /* For Mobile Phones Portrait or Landscape View */
+        @media screen and (max-width: 480px) { /*640*/
+            #introSection1 {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+            .navbar-main {
+                padding: 0.15em 6% 0.5em 6%;
+                max-height: fit-content;
+            }
+            .menu li a{
+                font-size: 14px;
+            }
+            #menu-desktop{
+                display: none;
+            }
+            #menu-mobile{
+                display: flex;
+                padding: 0 6%;
+            }
+            .hero-section{
+                display: flex;
+                flex-direction: column-reverse;
+                /* margin-top: 0; */
+            }
+            .hero-section .image-column, .hero-section .hero-text-column{
+                width: 100%;
+            }
+            #introSection1 .hero-text-column h1, #section5 .hero-text-column h1{
+                /* font-size: 33px !important; */
+                font-size: 2em !important;
+                line-height: 35px !important;
+            }
+            #introSection1 .hero-text-column p, #section5 .hero-text-column p, #secure-section-part1 #heart-plus-text ul li{
+                /* font-size: 24px !important; */
+                font-size: 1.5em !important;
+                line-height: 35px !important;
+                font-size: clamp(14px, 1.5vw, 18px);
+            }
+            .secure-section span p{
+                font-size: 24px !important;
+            }
+            .secure-section{
+                max-width: 100%;
+                padding: 10px !important;
+            }
+            #secure-section-part1{
+                display: flex;
+                flex-direction: column;
+            }
+            .secure-section .schedule-btn{
+                margin: 1.5em auto !important;
+            }
+            .secure-section #heart-desktop{
+                display: none;
+            }
+            .secure-section #heart-mobile{
+                display: block;
+            }
+            #introSection1, #introSection1 .hero-text-column{
+                /* margin: 0 !important; */
+            }
+            #introSection1{
+                /* align-items: flex-start; */
+                /* background-color: chartreuse; */
+            }
+            #introSection1 .hero-text-column{
+                justify-content: flex-start;
+                margin: 0;
+                padding: 0 0.5em;
+                position: absolute;
+                top: 0.5em;
+                /* background-color: wheat; */
+            }
+            #section5 .hero-text-column{
+                padding: 0 !important;
+                margin: 1em !important;
+            }
+            #break-before-p-section-1, #break-before-start-now-button, .break-line{
+                display: none;
+            }
+            #introSection1 .hero-text-column #schedule-demo, #section5 .hero-text-column .schedule-btn, .secure-section .schedule-btn{
+                font-size: 15px !important;
+                padding: 7px 10px !important;
+            }
+            #section5 .hero-text-column .schedule-btn{
+                margin: 0 auto;
+                position: relative;
+                right: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="overlay"></div>
+
+    <!-- Navbar -->
+    <div class="navbar-main">
+
+        <div class="navbar">
+            <!-- Company Logo (left align) -->
+            <img src="public/images/ekyamm-white.png" alt="Company Logo" class="logo ekyamm-logo">
+    
+            <!-- Right side container -->
+            <div class="nav-right">
+                <!-- Menu Options -->
+                <ul id="menu-desktop" class="menu">
+                    <li><a href="mh-practitioner.html">MH Practitioner</a></li>
+                    <li class="active"><a href="fertility.html">Fertility</a></li>
+                </ul>
+    
+                <!-- Buttons -->
+                <div class="buttons">
+                    <button id="chatNow" class="brand-btn contact-button">Chat Now</button>
+                    <button id="contactUs" class="brand-btn contact-button">Contact Us</button>
+                </div>
+            </div>
+        </div>
+
+        <ul id="menu-mobile" class="menu">
+            <li><a href="mh-practitioner.html">MH Practitioner</a></li>
+            <li class="active"><a href="fertility.html">Fertility</a></li>
+        </ul>
+    </div>
+
+    <!-- <div id="carouselEkyammIndicators" class="carousel slide" style="z-index: 6;" data-ride="" data-interval="400">
+        <ol class="carousel-indicators" style="z-index: 11;">
+          <li data-target="#carouselEkyammIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselEkyammIndicators" data-slide-to="1"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div id="carousel1" class="carousel-item active">
+              <section id="PSYSharkTankWinner" class="hero-section d-flex justify-content-center">
+                <div id="winnerMobile" class="image-column">
+                    <img id="winnerMobileImg" src="public/images/hand&UIComp.png" alt="Phone in Hand">
+                </div>
+                <div class="section1-leftcol">
+                    <div id="winnerImg" class="image-column">
+                        <img src="public/images/Ekyamm-Awardsgs.png" alt="Ekyamm Awards">
+                        <button id="schedule-demo2" class="schedule-btn">
+                            Schedule Demo
+                            <img src="public/images/red-arrow.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+              </section>
+            </div>
+            <div id="carousel2" class="carousel-item">
+                <section id="introSection1" class="hero-section"> 
+                    <div class="hero-text-column">
+                        <h1>
+                            <span class="brand-text">Enhance</span>&nbsp;the value of your clinic
+                        </h1>
+                        <p>
+                            <span class="brand-text brand-text-bold">Ekyamm</span>&nbsp;runs on International Standard security with AES-256 encryption for&nbsp;<span class="brand-text brand-text-bold">controlled and confidential data management</span>
+                        </p>
+                        <button id="schedule-demo" class="brand-btn schedule-btn">
+                            Schedule Demo
+                            <img src="public/images/Arrow.svg" alt="">
+                        </button>
+                    </div>
+
+                    <div class="image-column">
+                        <img src="public/images/heroMobile-3-screens.png" alt="Your Image">
+                    </div>
+                </section>
+            </div>
+        </div>
+      </div> -->
+
+    <section id="introSection1" class="hero-section" style="margin-top: 3em;">
+        <div class="image-column">
+            <img src="public/images/patient-doctor.png" alt="Patient Doctor">
+        </div> 
+        
+        <div class="hero-text-column">
+            <h1 style="padding-top: 50px;">
+                Enhance Your Patient Care with Mind-Body-Emotional Balance
+            </h1>
+            <br id="break-before-p-section-1">
+            <p>
+                Ekyamm empowers your treatment plans by seamlessly integrating emotional well-being support into the treatment journey.
+            </p>
+            <br id="break-before-start-now-button">
+            <button id="schedule-demo" class="brand-btn schedule-btn" style="padding: 10px 20px 12px 20px; 
+                gap: 14px;
+                font-family: Quicksand;
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 100%;
+                letter-spacing: 0%;
+                text-align: center;
+                vertical-align: middle;
+                ">
+                Start Now
+                <img src="public/images/Arrow.svg" alt="">
+            </button>
+        </div>
+    </section>
+    
+    
+    <!-- 2nd section -->
+    <section class="knowMore-section" style="position: relative;
+    z-index: 1;">
+        <!-- Image column -->
+        <div class="image-column" style="position: relative;z-index: 6;">
+            <img src="public/images/Women-Section-2comp.png" alt="Your Image">
+        </div>
+
+        <!-- Text column -->
+        <div class="hero-text-column">
+            <h1 class="fontW-H1">
+                Focus on <br>
+                <span class="brand-text">helping patients</span>
+            </h1>
+            <p>Empower your patients experience with Your Clinic Companion</p>
+            <div id="know-more">Know More</div>
+            <div id="store-img-section">
+                <div id="know-more">Know More</div>
+                <a href="https://play.google.com/store/apps/details?id=com.ekyamm.app" target="_blank">
+                    <img src="public/images/Play-store.png" alt="Play Store">
+                </a>
+                <!-- <a href="https://apps.apple.com/in/app/ekyamm-mh-clinic-companion/id6450462268" target="_blank">
+                    <img src="public/images/App-store.png" alt="App Store">
+                </a> -->
+            </div>
+        </div>
+
+        
+        <div class="fade-effect" style="position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50px; /* Adjust the fade height */
+        background: linear-gradient(to top, #E4B4AE, transparent); /* Section 2 color fading into Section 1 */
+        z-index: 200; /* Ensures it stays on top */"></div> <!-- Separate div for gradient -->
+    </section>
+
+    <!-- 3rd section -->
+    <section class="secure-section">
+        <div id="secure-section-part1">
+            <!-- Image column -->
+            <div id="heart-plus-container">
+                <img width="350" id="heart-desktop" src="public/images/heart-plus.png" alt="Heart Plus">
+                <img width="250" id="heart-mobile" src="public/images/heart-plus-mobile.png" alt="Heart Plus">
+            </div>
+    
+            <!-- Text column -->
+            <div id="heart-plus-text">
+                <ul>
+                    <li style="font-family: 'Roboto Serif', serif;
+                        font-weight: 700;
+                        font-size: 37px;
+                        line-height: 48px;
+                        letter-spacing: 0;
+                        vertical-align: middle;
+                        color: #2F2F2F;
+                    ">Zero Cost to the Clinic</li>
+                    <li style="font-family: 'Roboto Serif', serif;
+                        font-weight: 700;
+                        font-size: 37px;
+                        line-height: 48px;
+                        letter-spacing: 0;
+                        vertical-align: middle;
+                        color: #2F2F2F;
+                    ">No Extra Infrastructure or Staff Required</li>
+                    <li style="font-family: 'Roboto Serif', serif;
+                        font-weight: 700;
+                        font-size: 37px;
+                        line-height: 48px;
+                        letter-spacing: 0;
+                        vertical-align: middle;
+                        color: #2F2F2F;
+                    ">Enhances Your Clinical Outcomes</li>
+                    <li style="font-family: 'Roboto Serif', serif;
+                        font-weight: 700;
+                        font-size: 37px;
+                        line-height: 48px;
+                        letter-spacing: 0;
+                        vertical-align: middle;
+                        color: #2F2F2F;
+                    ">Boosts Patient Satisfaction & Trust</li>
+                </ul>
+            </div>
+        </div>
+
+        <span style="color: #2F2F2F;margin-top: 0;padding-top: 0;">
+            <p style="font-family: Roboto Flex;
+                font-weight: 300;
+                font-size: 28px;
+                line-height: 33px;
+                letter-spacing: 0%;
+                text-align: center;
+                vertical-align: middle;
+                ">
+                <!-- <span id="section3-t1">Take Control of Your Clinic Data </span> -->
+                We <span style="font-family: Roboto Flex;
+                    font-weight: 700;
+                    font-size: 28px;
+                    line-height: 33px;
+                    letter-spacing: 0%;
+                    text-align: center;
+                    vertical-align: middle;
+                ">integrate directly into your patient care workflow,</span><br class="break-line"> offering professional <span style="color: #3B326B;
+                    font-family: Roboto Flex;
+                    font-weight: 400;
+                    font-size: 28px;
+                    line-height: 33px;
+                    letter-spacing: 0%;
+                    text-align: center;
+                    vertical-align: middle;
+                ">mental health interventions</span> <br>
+                without disrupting your existing systems.
+            </p>
+        </span>
+        
+        <button class="brand-btn schedule-btn" style="padding: 10px 20px 10px 20px; 
+            gap: 14px;
+            font-family: Quicksand;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 100%;
+            letter-spacing: 0%;
+            text-align: center;
+            vertical-align: middle;
+            margin: 0 auto;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            padding: 13px 20px;
+            ">
+            Get Ekyamm for your Clinic
+            <img src="public/images/Arrow.svg" alt="">
+        </button>
+
+    </section>
+
+    <!-- 4th section -->
+    <!-- <section id="section4" class="prescription-section" style="background-color: rgba(239, 239, 239, 1);">
+
+        <div class="image-column">
+            <img src="public/images/Prescriptions.png" alt="Prescriptions">
+        </div>
+
+        <div class="hero-text-column">
+            <p>Upload or Create</p>
+            <h1>
+                <span class="brand-text fontW-H1">Prescriptions</span>
+            </h1>
+            <p>in less than 30 seconds</p>
+            <button class="brand-btn schedule-btn" id="request-btn">
+                Request Invite
+                <img src="public/images/Arrow.svg" alt="">
+            </button>
+        </div>
+
+    </section> -->
+
+    <!-- 5th section -->
+    <section id="section5" class="prescription-section" style="background-color: rgba(240, 235, 232, 1);
+    margin: 0;
+    padding: 0;
+    ">
+
+        <!-- Text column -->
+        <div class="hero-text-column" style="margin: 50px 0;padding-left: 7%;max-width: 850px;">
+            <h1>
+                <span id="section-5-brand-text" class="brand-text fontW-H1" style="font-family: Roboto Serif;
+                font-weight: 700;
+                font-size: 60px;
+                letter-spacing: 0%;
+                ">Let’s Redefine Fertility Care with Mind-Body-Emotional Support
+                </span>
+            </h1>
+            <br class="break-line"><br class="break-line">
+            <p style="font-family: Roboto Flex;
+            font-weight: 300;
+            font-size: 30px;
+            line-height: 42px;
+            letter-spacing: 0%;
+            vertical-align: middle;
+            ">Join leading Infertility and Gynaec Centers in transforming patient care with Ekyamm’s mental health support platform to offer personalized emotional care that’s seamless, stigma-free, and supportive. </p>
+            <br class="break-line"><br class="break-line">
+            <button class="brand-btn schedule-btn" style="margin-top: 10px;
+                padding: 13px 20px 13px 20px;
+                font-family: Quicksand;
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 100%;
+                letter-spacing: 0%;
+                text-align: center;
+                vertical-align: middle;
+                ">
+                Redefine Care Today !
+                <img src="public/images/Arrow.svg" alt="">
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="20" height="26" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                </svg> -->
+            </button>
+        </div>
+        
+        <!-- Image column -->
+        <div class="image-column" style="height: 100%;
+        display: flex;
+        position: relative;
+        ">
+            <!-- <img src="public/images/doctor-with-white-coat.png" alt="Doctor with white coat" style="height: 100%; min-height: 100%;"> -->
+            <img src="public/images/doctor-with-his-arms-crossed.png" alt="Doctor with arms crossed" style="height: 100%; min-height: 100%;">
+        </div>
+
+    </section>
+
+    <footer style="background-color: rgba(255, 255, 255, 1);">
+        <section>
+            <img src="public/images/ekyamm-white.png" alt="Company Logo" class="logo ekyamm-logo">
+            <div id="store">
+                <a href="https://play.google.com/store/apps/details?id=com.ekyamm.app" target="_blank">
+                    <img src="public/images/Play-store.png" alt="Play Store" class="logo">
+                </a>
+                <a href="https://apps.apple.com/in/app/ekyamm-mh-clinic-companion/id6450462268" target="_blank">
+                    <img src="public/images/App-store.png" alt="App Store" class="logo">
+                </a>
+            </div>
+        </section>
+        <div id="copyright" align="center">Copyright © <span id="currentYear"></span>&nbsp;Radicle Minds India Private Limited. All rights reserved. | 
+            <a href="privacy-policy.html" style="color:inherit; font-weight: 500; cursor: pointer;">Privacy Policy</a>
+        </div>
+    </footer>
+
+    <!-- The form -->
+    <div class="form-popup" id="contactUsForm">
+        <div id="close-contactForm" align="right">
+            <img src="public/images/Close.svg" width="23" height="23" alt="Close form">
+        </div>
+        <form action="/" class="form-container">
+            <h1>Get In Touch!</h1>
+
+            <label for="name"><b>Name</b></label>
+            <input type="text" placeholder="Enter your Name" name="name" required>
+        
+            <label for="email"><b>Email</b></label>
+            <input type="email" placeholder="Enter your Email" name="email" required>
+        
+            <label for="msg"><b>Message</b></label>
+            <textarea name="msg" id="msg" placeholder="Enter your message" cols="30" rows="5" required></textarea>
+            <!-- <input type="text" placeholder="Enter your message" name="msg" required> -->
+        
+            <button type="submit" class="btn">Submit</button>
+
+            <div align="center" id="form-footer">
+                For all inquiries, please feel free to reach out at:<br>
+                <div align="center" class="d-flex align-items-center justify-content-center">
+                    <img src="public/images/Call.svg" width="15" height="15" alt="Call">&nbsp;
+                    <a href="https://api.whatsapp.com/send/?phone=9326780323&text&type=phone_number&app_absent=0" target="_blank">+91&nbsp;93267&nbsp;80323</a>
+                </div>
+            </div>
+            <!-- <button id="close-contactForm" type="button" class="btn cancel" onclick="closeForm()">Close</button> -->
+        </form>
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+ 	<script src="jquery.fittext.js"></script>
+    <script type="text/javascript">
+        // jQuery("#responsive_headline").fitText();
+        // jQuery(".hero-text-column").fitText(0.8);
+        $(".hero-text-column h1").fitText(1, {
+            minFontSize: '28px',
+            maxFontSize: '60px'
+        });
+        $("#section-5-brand-text").fitText(1, {
+            minFontSize: '28px',
+            maxFontSize: '60px'
+        });
+        $(".hero-text-column p").fitText(1.2, {
+            minFontSize: '14px',
+            maxFontSize: '30px'
+        });
+        
+
+        // Disable right click
+        // document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // JavaScript code to fetch and update the current year
+        const currentYearElement = document.getElementById('currentYear');
+        const currentYear = new Date().getFullYear();
+        currentYearElement.textContent = currentYear;
+
+        // Code to add click event listeners to ekyamm logos
+        document.addEventListener('DOMContentLoaded', function() {
+            const ekyammLogos = document.querySelectorAll('.ekyamm-logo');
+
+            ekyammLogos.forEach(function(logo) {
+                logo.addEventListener('click', function() {
+                    window.location.href = '/';
+                });
+            });
+        });
+
+        function openForm() {
+            document.getElementById("overlay").style.display = "block";
+            document.getElementById("contactUsForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("overlay").style.display = "none";
+            document.getElementById("contactUsForm").style.display = "none";
+        }
+
+        window.mobileCheck = function() {
+            let check = false;
+            // (function(a){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4))) check = true;})(navigator.userAgent||navigator.vendor||window.opera);
+
+            // Check if the screen width is 767 pixels or below
+            if (window.innerWidth <= 767) {
+                check = true;
+            }
+            return check;
+        };
+        // console.log(mobileCheck());
+
+        // Get all button elements
+        var buttons = document.querySelectorAll('button');
+
+        // Iterate over each button and add a click event listener
+        buttons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                // alert('Button ' + button.id + ' clicked!');
+                if (mobileCheck()) {
+                    const url = 'https://api.whatsapp.com/send/?phone=9326780323&text&type=phone_number&app_absent=0'
+                    window.open(url, '_blank').focus();
+                } else {
+                    console.log('Contact form');
+                    openForm()
+                }
+            });
+        });
+
+        // CLose form with cancel button inside form
+        document.getElementById('close-contactForm').addEventListener('click', function () {
+            closeForm()
+        })
+        // Close form by clicking anywhere outside form
+        document.getElementById('overlay').addEventListener('click', function () {
+            closeForm()
+        })
+
+        // window.addEventListener('resize', function() {
+        //     var winnerMobileImage = document.getElementById('winnerMobileImg');
+        //     if (window.innerWidth <= 768) {
+        //         winnerMobileImage.src = 'public/images/handUI.png';
+        //     } else {
+        //         winnerMobileImage.src = 'public/images/hand&UIComp.png';
+        //     }
+        // });
+        // var winnerMobileImage = document.getElementById('winnerMobileImg');
+        // if (window.innerWidth <= 768) {
+        //     winnerMobileImage.src = 'public/images/handUI.png';
+        // } else {
+        //     winnerMobileImage.src = 'public/images/hand&UIComp.png';
+        // }
+
+        // Check if the browser is Safari
+        var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+        // Check if the device is iOS
+        var isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+        // Disable zoom on iOS in Safari
+        if (isiOS && isSafari) {
+            document.addEventListener('gesturestart', function (e) {
+                e.preventDefault();
+            });
+        }
+
+
+    </script>
+
+    <!-- Bootstrap JS and Popper.js for Navbar toggle functionality -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

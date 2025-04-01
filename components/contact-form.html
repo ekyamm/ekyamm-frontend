@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="components/contact-form.css">
+<!-- The form -->
+<div class="form-popup" id="contactUsForm">
+    <div id="close-contactForm" align="right">
+        <img src="public/images/Close.svg" width="23" height="23" alt="Close form">
+    </div>
+    <form action="/" class="form-container">
+        <h1>Get In Touch!</h1>
+
+        <label for="name"><b>Name</b></label>
+        <input type="text" placeholder="Enter your Name" name="name" required>
+    
+        <label for="email"><b>Email</b></label>
+        <input type="email" placeholder="Enter your Email" name="email" required>
+    
+        <label for="msg"><b>Message</b></label>
+        <textarea name="msg" id="msg" placeholder="Enter your message" cols="30" rows="5" required></textarea>
+        <!-- <input type="text" placeholder="Enter your message" name="msg" required> -->
+    
+        <button type="submit" class="btn">Submit</button>
+
+        <div align="center" id="form-footer">
+            For all inquiries, please feel free to reach out at:<br>
+            <div align="center" class="d-flex align-items-center justify-content-center">
+                <img src="public/images/Call.svg" width="15" height="15" alt="Call">&nbsp;
+                <a href="https://api.whatsapp.com/send/?phone=9326780323&text&type=phone_number&app_absent=0" target="_blank">+91&nbsp;93267&nbsp;80323</a>
+            </div>
+        </div>
+        <!-- <button id="close-contactForm" type="button" class="btn cancel" onclick="closeForm()">Close</button> -->
+    </form>
+</div>

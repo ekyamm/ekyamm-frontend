@@ -1,0 +1,123 @@
+
+/* Navbar styles - START */
+.navbar-main {
+    background-color: #ffffff; /* White background */
+    padding: 20px 6% 20px 6%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin-right: 35px; /* Spacing between menu options */
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: inherit; /* or a specific color */
+    font-size: 16px; /* Adjust as needed */
+}
+
+/* Highlight the active menu item */
+.menu li.active a {
+    font-weight: 700;
+    color: #776EA5;
+}
+
+#menu-desktop{
+    display: flex;
+}
+#menu-mobile{
+    display: none;
+}
+#contactUs{
+    display: block;
+}
+#chatNow{
+    display: none;
+}
+
+/* Logo styles */
+.logo {
+    max-width: 250px;
+    cursor: pointer;
+}
+
+.brand-btn{
+    background-color: #776EA5; 
+    color: #ffffff; 
+    border: none;
+    padding: 10px;
+    border-radius: 11px;
+    cursor: pointer;
+    font-family: 'Quicksand';
+    font-weight: 500;
+}
+
+/* Contact button styles */
+.contact-button {
+    /* padding: 8px 16px; */
+    /* font-size: 14px;
+    position: relative; */
+    /* right: 10%; */
+}
+
+/* Navbar styles - END */
+
+@media (max-width: 768px) {
+    /* Tablet styles */
+}
+  
+@media (max-width: 480px) {
+    /* Mobile styles */
+
+    .navbar-main {
+        padding: 0.15em 6% 0.5em 6%;
+        max-height: fit-content;
+    }
+    .logo {
+        max-width: 112px;
+    }
+    .menu li a{
+        font-size: 14px;
+    }
+    #menu-desktop{
+        display: none;
+    }
+    #menu-mobile{
+        display: flex;
+        padding: 0 2.5%;
+    }
+    #chatNow{
+        display: flex;
+        font-size: 12px;
+    }
+    #contactUs{
+        display: none;
+    }
+}
