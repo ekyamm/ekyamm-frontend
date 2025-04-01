@@ -1,0 +1,48 @@
+
+
+.section2-h1{
+    font-family: 'Roboto Serif' !important;
+    color: #2F2F2F;
+    padding: 1rem;
+}
+
+.section2-btn{
+    width: fit-content;
+}
+
+#section2-subtext{
+    width: 60%;
+}
+#section2-subtext p{
+    width: 60%;
+}
+#section2-subtext button{
+    width: auto;
+}
+
+
+@media (min-width: 768px) {
+    /* Tablet styles */
+    
+    #section2-subtext{
+        width: 80%;
+    }
+    #section2-subtext p{
+        width: 60%;
+    }
+}
+
+
+@media (max-width: 480px) {
+    /* Mobile styles */
+
+    .section2-h1{
+        padding: 0;
+    }
+    #section2-subtext{
+        width: 100%;
+    }
+    #section2-subtext p{
+        width: 80%
+    }
+}
