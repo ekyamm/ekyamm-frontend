@@ -14,6 +14,7 @@
 .navbar {
     display: flex;
     justify-content: space-between;
+    padding: 0 !important;
 }
 
 .nav-right {
@@ -97,7 +98,7 @@
     /* Mobile styles */
 
     .navbar-main {
-        padding: 0.15em 6% 0.5em 6%;
+        padding: 0.5em 6% 0.5em 6%;
         max-height: fit-content;
     }
     .logo {
@@ -112,12 +113,17 @@
     #menu-mobile{
         display: flex;
         padding: 0 2.5%;
+        justify-content: center;
     }
     #chatNow{
         display: flex;
         font-size: 12px;
+        padding: 6px 10px;
     }
     #contactUs{
         display: none;
+    }
+    #navbar-company-logo{
+        min-width: 125px;
     }
 }
