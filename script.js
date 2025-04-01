@@ -93,6 +93,7 @@ function updateNavHeight() {
 // Load Navbar, Sections, and Footer
 // loadComponent("navbar-placeholder", "components/navbar.html");
 loadComponent("section1-placeholder", "components/section1.html");
+loadComponent("section5-placeholder", "components/section5.html");
 // loadComponent("footer-placeholder", "components/footer.html");
 
 
