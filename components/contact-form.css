@@ -102,3 +102,7 @@
     background: rgba(0, 0, 0, 0.8);
     z-index: 11;
 }
+
+.compulsory-fields{
+    color: red;
+}
