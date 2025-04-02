@@ -10,7 +10,7 @@
 .section5-h1{
     font-family: 'Roboto Serif';
     color: #3B326B;
-    font-size: inherit;
+    font-size: clamp(2rem, 5vw, 3rem);
 }
 
 #section5-img-container{
