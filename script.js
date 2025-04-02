@@ -65,7 +65,7 @@ function loadContactForm() {
                 button.addEventListener('click', function() {
                     // alert('Button ' + button.id + ' clicked!');
                     if (mobileCheck()) {
-                        const url = 'https://api.whatsapp.com/send/?phone=9326780323&text&type=phone_number&app_absent=0'
+                        const url = 'https://api.whatsapp.com/send/?phone=9920934198&text&type=phone_number&app_absent=0'
                         window.open(url, '_blank').focus();
                     } else {
                         console.log('Contact form');
