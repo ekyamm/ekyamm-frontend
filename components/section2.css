@@ -22,6 +22,12 @@
     width: auto;
     align-items: flex-start;
 }
+#section2-img{
+    display: block;
+}
+#section2-img-mobile{
+    display: none;
+}
 
 
 @media (min-width: 768px) {
@@ -50,5 +56,12 @@
     }
     .break-line{
         display: none;
+    }
+
+    #section2-img{
+        display: none;
+    }
+    #section2-img-mobile{
+        display: block;
     }
 }
