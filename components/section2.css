@@ -4,6 +4,8 @@
     font-family: 'Roboto Serif' !important;
     color: #2F2F2F;
     padding: 1rem;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 .section2-btn{
@@ -11,13 +13,14 @@
 }
 
 #section2-subtext{
-    width: 60%;
+    width: 30%;
 }
 #section2-subtext p{
-    width: 60%;
+    width: 50%;
 }
 #section2-subtext button{
     width: auto;
+    align-items: flex-start;
 }
 
 
@@ -44,5 +47,8 @@
     }
     #section2-subtext p{
         width: 80%
+    }
+    .break-line{
+        display: none;
     }
 }
