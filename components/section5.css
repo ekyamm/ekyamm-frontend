@@ -23,7 +23,7 @@
     /* margin: 0;
     padding: 0; */
     /* max-width: 100%; */
-    transform: translateX(40%);
+    /* transform: translateX(80%); */
 }
 
 
@@ -49,6 +49,6 @@
     }   
     #section5-img{
         height: 100%;
-        transform: translateX(-8%);
+        transform: translateX(35%);
     }
 }
