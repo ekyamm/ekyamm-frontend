@@ -4,6 +4,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Roboto Flex';
+    overflow-x: hidden;
 }
 
 /* Ensure the root element defines the variable */
