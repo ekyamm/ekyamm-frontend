@@ -10,20 +10,24 @@
 .section5-h1{
     font-family: 'Roboto Serif';
     color: #3B326B;
+    font-size: inherit;
 }
 
 #section5-img-container{
     display: flex;
-    justify-content: end;
+    /* justify-content: end; */
     align-items: end;
 }
 #section5-img{
-    max-height: 50vh;
+    max-height: 45vh;
     /* display: block; */
     /* margin: 0;
     padding: 0; */
     /* max-width: 100%; */
-    /* transform: translateX(80%); */
+    transform: translateX(30%);
+}
+#section5-text-container{
+    padding-left: 10% !important;
 }
 
 
@@ -31,8 +35,8 @@
     /* Tablet styles */
     
     #section5-img{
-        max-height: 40vh;
-        transform: translateX(30%);
+        height: 60vh;
+        transform: translateX(10%);
     }
 }
 
@@ -49,6 +53,9 @@
     }   
     #section5-img{
         height: 100%;
-        transform: translateX(35%);
+        transform: translateX(-10%);
+    }
+    .section5-h1{
+        font-size: 1.7rem;
     }
 }
