@@ -29,12 +29,12 @@
             position: fixed;
             width: 100%;
             /* height: 15%; */
-            top: 0;
+            /* top: 0;
             z-index: 10;
             display: flex;
             justify-content: space-between;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-            align-items: center;
+            align-items: center; */
         }
 
         /* Logo styles */
@@ -352,22 +352,19 @@
             z-index: -1;
         }
     </style>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     
     <div id="overlay"></div>
 
     <div class="overlay"></div>
-
-    <!-- Navbar -->
-    <div class="navbar">
-        <!-- Company Logo (left align) -->
-        <img src="public/images/ekyamm-white.png" alt="Company Logo" class="logo ekyamm-logo">
-
-        <!-- Contact Us button (right align) -->
-        <button id="chatNow" class="brand-btn contact-button">Chat Now</button>
-        <button id="contactUs" class="brand-btn contact-button">Contact Us</button>
-    </div>
+    
+    <!-- Placeholder for Navbar -->
+    <div id="navbar-placeholder" style="padding: 0; margin: 0;"></div>
 
     <section id="header-section">
         <h1>Privacy Policy</h1>
@@ -479,23 +476,9 @@
         <h1>How to Contact Us.</h1>
         <p>For the purpose of this Policy, Ekyamm is a data storage and aggregator for clinics - wherein the clinic has control over private notes and data of their patients. <br> Should you have any questions or concerns about this Policy, you can contact us from the Chat section in the Ekyamm app - Open the Ekyamm App, Click on the Menu Icon (Hamburger Menu) on the bottom of the expanded Menu you will see Ekyamm logo and below it click on the Chat icon. You can communicate your wish to us and we shall be in touch with you in a reasonable time.</p>
     </section>
-
-    <footer style="background-color: rgba(255, 255, 255, 1);">
-        <section>
-            <img src="public/images/ekyamm-white.png" alt="Company Logo" class="logo ekyamm-logo">
-            <div id="store">
-<a href="https://play.google.com/store/apps/details?id=com.ekyamm.app" target="_blank">
-                <img src="public/images/Play-store.png" alt="Play Store" class="logo">
-</a>
-                <!-- <a href="https://apps.apple.com/in/app/ekyamm-mh-clinic-companion/id6450462268" target="_blank">
-                <img src="public/images/App-store.png" alt="App Store" class="logo">
-</a> -->
-            </div>
-        </section>
-        <div id="copyright" align="center">Copyright © <span id="currentYear"></span>&nbsp;Radicle Minds India Private Limited. All rights reserved. | 
-            <a href="privacy-policy.html" style="color:inherit; font-weight: 500; cursor: pointer;">Privacy Policy</a>
-        </div>
-    </footer>
+    
+    <!-- Placeholder for Footer -->
+    <div id="footer-placeholder"></div>
 
     <!-- The form -->
     <div class="form-popup" id="contactUsForm">
@@ -613,5 +596,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+    <script src="script.js"></script>
 </body>
 </html>

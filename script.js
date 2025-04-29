@@ -88,6 +88,18 @@ function updateNavHeight() {
     } else {
         console.error("Navbar element not found.");
     }
+
+    // Get the current HTML file name
+    const currentFile = window.location.pathname.split('/').pop();
+
+    // Check if the current file is privacy-policy.html
+    if (currentFile === 'privacy-policy.html' || currentFile === 'request-account-delete.html') {
+        const activeNavItems = document.querySelectorAll('.menu .active');
+        console.log(activeNavItems)
+        activeNavItems.forEach(item => {
+            item.classList.remove('active');
+        });
+    }
 }
 
 // Load Navbar, Sections, and Footer
